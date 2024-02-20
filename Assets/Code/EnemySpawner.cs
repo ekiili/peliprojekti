@@ -10,8 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _timeToSpawn = 1f;
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _timeToLive = 10f;
-    [SerializeField] private Rigidbody2D _projectile;
-    private Rigidbody2D SpawnedEnemy;
+    [SerializeField] public GameObject _projectile;
+    private GameObject projectileClone;
     private float timer = 0f;
     private Rigidbody2D _rb = null;
     private GameObject playerObj = null;
@@ -46,8 +46,8 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
             Vector3 dir = (playerObj.transform.position - _rb.transform.position).normalized;
-            SpawnedEnemy = Instantiate(_projectile, transform.position, transform.rotation);
-            SpawnedEnemy.AddForce(dir * _speed, ForceMode2D.Impulse);
-            Destroy(SpawnedEnemy.gameObject, _timeToLive);
+            projectileClone = Instantiate(_projectile, transform.position, transform.rotation);
+            projectileClone.GetComponent<Rigidbody2D>().AddForce(dir * _speed, ForceMode2D.Impulse);
+            Destroy(projectileClone.gameObject, _timeToLive);
     }
 }
