@@ -9,6 +9,7 @@ public class ProjectileSpawner : MonoBehaviour
 {
     [Header ("Internals")] // Components the script needs to work
     [SerializeField] private List<Projectile> firedProjectiles = new List<Projectile>();    // A list of all currently alive projectiles fired by this script
+    /*NTS: The list isn't currently used for anything, but could for example be used to freeze all projectiles for a limited time. */
 
     /// <summary>
     /// Creates a new projectile and sends it toward targeted position.
