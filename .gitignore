@@ -1,3 +1,9 @@
+
+###
+# .gitignore copied from https://gist.github.com/FullStackForger/20bbf62861394b1a3de0 <3
+# Also added user settings and logs to .gitignore
+###
+
 ###
 # Unity folders and files
 ###
@@ -12,6 +18,9 @@
 sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
+
+[Ll]ogs/
+[Uu]serSettings/
 
 ###
 # VS/MD solution and project files
