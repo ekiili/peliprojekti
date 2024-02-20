@@ -8,7 +8,7 @@ using UnityEngine;
 /// A base class for different projectiles types to expand from.
 /// NTS: Make abstract? Prolly not.
 /// </summary>
-public class BaseProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     [Header ("Attributes")] // Editable attributes of the projectile
     [SerializeField] public float _speed = 1f;         // How fast the projectile moves
@@ -18,7 +18,7 @@ public class BaseProjectile : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb = null;    // 2D Rigidbody of the projectile
 
     [Header ("Internals")] // Variables the script uses to function
-    [SerializeField] private float _timeAlive = 0f;     // How long the projectile has been alive
+    [SerializeField] private float _timeAlive = 0f;         // How long the projectile has been alive
 
     [Header ("Physics/Transform Animation")] // Editable attributes about physics based animation, mainly spinning
     [SerializeField] public bool _spins = true;         // Does the projectile spin
@@ -34,11 +34,15 @@ public class BaseProjectile : MonoBehaviour
 
     /// <summary>
     /// Runs once when the projectile is fired.
-    /// Used to start different processess such as spinning.
+    /// Runs other start processess and fires projectile at target.
     /// </summary>
-    void Start()
+    /// <param name="targetPos">The position the projectile is fired at</param>
+    public void Fire(Vector2 targetPos)
     {
         DoPhysAnim();   // Starts physics based animation, such as spinning
+
+        Vector2 targetDirection = (targetPos - (Vector2) transform.position).normalized;
+        _rb.AddForce(targetDirection * _speed, ForceMode2D.Impulse);
     }
 
     /// <summary>
