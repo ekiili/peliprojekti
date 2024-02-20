@@ -7,8 +7,11 @@ using UnityEngine.InputSystem;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float _spawnAmount = 1f;
-    [SerializeField] private float _TimeToSpawn = 1f;
+    [SerializeField] private float _timeToSpawn = 1f;
     [SerializeField] private float _speed = 1f;
+    [SerializeField] private float _timeToLive = 10f;
+    [SerializeField] private Rigidbody2D _projectile;
+    private Rigidbody2D SpawnedEnemy;
     private float timer = 0f;
     private Rigidbody2D _rb = null;
     private GameObject playerObj = null;
@@ -16,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        timer = _TimeToSpawn;
+        timer = _timeToSpawn;
     }
     void Start()
     {
@@ -29,7 +32,6 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(timer);
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
@@ -37,15 +39,15 @@ public class EnemySpawner : MonoBehaviour
             {
                 SpawnEnemy();
                 _spawnAmount--;
-                timer = _TimeToSpawn;
+                timer = _timeToSpawn;
             }
         }
     }
     private void SpawnEnemy()
     {
-            Rigidbody2D clone = Instantiate(_rb, transform.position, transform.rotation);
-            Vector3 dir = (playerObj.transform.position - clone.transform.position).normalized;
-            clone.AddForce(dir * _speed, ForceMode2D.Impulse);
-            Destroy(clone.gameObject, _TimeToSpawn - 0.1f);
+            Vector3 dir = (playerObj.transform.position - _rb.transform.position).normalized;
+            SpawnedEnemy = Instantiate(_projectile, transform.position, transform.rotation);
+            SpawnedEnemy.AddForce(dir * _speed, ForceMode2D.Impulse);
+            Destroy(SpawnedEnemy.gameObject, _timeToLive);
     }
 }
