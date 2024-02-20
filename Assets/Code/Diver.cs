@@ -11,10 +11,10 @@ public class Diver : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb = null;
 
     [Header ("Internals")]
-    [SerializeField] private Vector2 movementInput = Vector2.zero;
+    [SerializeField] private Vector2 _movementInput = Vector2.zero;
 
     [Header ("Attributes")]
-    [SerializeField] public float swimSpeed = 1f;
+    [SerializeField] public float _swimSpeed = 1f;
 
     private void Awake()
     {
@@ -35,15 +35,15 @@ public class Diver : MonoBehaviour
     private void FixedUpdate()
     {
         // Shortening player input movement values
-        movementInput = _inputs.Diver.Move.ReadValue<Vector2>();
+        _movementInput = _inputs.Diver.Move.ReadValue<Vector2>();
 
         // Moves the diver in the direction of input
-        _rb.AddForce(movementInput.normalized * swimSpeed, ForceMode2D.Force);
+        _rb.AddForce(_movementInput.normalized * _swimSpeed, ForceMode2D.Force);
 
         // If moving, rotate diver in the direction of input
-        if (movementInput != Vector2.zero)
+        if (_movementInput != Vector2.zero)
         {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, movementInput.normalized);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, _movementInput.normalized);
         }
     }
     public void Die()
