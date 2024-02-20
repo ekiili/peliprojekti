@@ -94,6 +94,34 @@ public partial class @ActionMap: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Test"",
+            ""id"": ""a43c1fb6-138b-4f4e-be4d-2b539528f94c"",
+            ""actions"": [
+                {
+                    ""name"": ""Test"",
+                    ""type"": ""Button"",
+                    ""id"": ""452fd762-f997-4fdb-9907-ec8b4046b88d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""001d7b51-e933-4c6a-a1b0-ebce6432fa32"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -107,6 +135,9 @@ public partial class @ActionMap: IInputActionCollection2, IDisposable
         // Diver
         m_Diver = asset.FindActionMap("Diver", throwIfNotFound: true);
         m_Diver_Move = m_Diver.FindAction("Move", throwIfNotFound: true);
+        // Test
+        m_Test = asset.FindActionMap("Test", throwIfNotFound: true);
+        m_Test_Test = m_Test.FindAction("Test", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -210,6 +241,52 @@ public partial class @ActionMap: IInputActionCollection2, IDisposable
         }
     }
     public DiverActions @Diver => new DiverActions(this);
+
+    // Test
+    private readonly InputActionMap m_Test;
+    private List<ITestActions> m_TestActionsCallbackInterfaces = new List<ITestActions>();
+    private readonly InputAction m_Test_Test;
+    public struct TestActions
+    {
+        private @ActionMap m_Wrapper;
+        public TestActions(@ActionMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Test => m_Wrapper.m_Test_Test;
+        public InputActionMap Get() { return m_Wrapper.m_Test; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TestActions set) { return set.Get(); }
+        public void AddCallbacks(ITestActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TestActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TestActionsCallbackInterfaces.Add(instance);
+            @Test.started += instance.OnTest;
+            @Test.performed += instance.OnTest;
+            @Test.canceled += instance.OnTest;
+        }
+
+        private void UnregisterCallbacks(ITestActions instance)
+        {
+            @Test.started -= instance.OnTest;
+            @Test.performed -= instance.OnTest;
+            @Test.canceled -= instance.OnTest;
+        }
+
+        public void RemoveCallbacks(ITestActions instance)
+        {
+            if (m_Wrapper.m_TestActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITestActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TestActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TestActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TestActions @Test => new TestActions(this);
     private int m_PlayerSchemeIndex = -1;
     public InputControlScheme PlayerScheme
     {
@@ -222,5 +299,9 @@ public partial class @ActionMap: IInputActionCollection2, IDisposable
     public interface IDiverActions
     {
         void OnMove(InputAction.CallbackContext context);
+    }
+    public interface ITestActions
+    {
+        void OnTest(InputAction.CallbackContext context);
     }
 }

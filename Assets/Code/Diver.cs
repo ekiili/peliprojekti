@@ -46,4 +46,8 @@ public class Diver : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(Vector3.forward, movementInput.normalized);
         }
     }
+    public void Die()
+    {
+        gameObject.SetActive(false);
+    }
 }
