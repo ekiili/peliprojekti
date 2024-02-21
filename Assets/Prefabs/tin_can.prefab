@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7584456150854905932}
   - component: {fileID: 6579699261804105614}
-  - component: {fileID: 5633335353618714865}
   - component: {fileID: 7544061488378709715}
+  - component: {fileID: -4498279522215748706}
   m_Layer: 0
   m_Name: tin_can
   m_TagString: Untagged
@@ -86,25 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5633335353618714865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7812957649878656615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88814b6be16da7042abe6cc51ab5a392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 1
-  _timeToLive: 10
-  _rb: {fileID: 0}
-  _timeAlive: 0
-  _animType: 0
-  _spins: 1
-  _spinSpeed: 1
 --- !u!50 &7544061488378709715
 Rigidbody2D:
   serializedVersion: 4
@@ -132,3 +113,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4498279522215748706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812957649878656615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2dd9673dafb3047a6fd8d509f443ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1
+  _timeToLive: 10
+  _rb: {fileID: 0}
+  _timeAlive: 0
+  _spins: 1
+  _spinSpeed: 1
+  _waves: 0
+  _waveLength: 1
+  _waveSpeed: 1

@@ -15,17 +15,14 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private GameObject _playerObj = null;
     [SerializeField] private Projectile _proj = null;
 
+    
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         _spawner = GetComponent<ProjectileSpawner>();
         _playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (_timeSinceLastSpawn > _spawningFrequency)
