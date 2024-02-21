@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1698576655
+    locked: 0
+  - name: Debug
+    uniqueID: 2616303713
     locked: 0
