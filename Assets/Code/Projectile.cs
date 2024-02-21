@@ -24,9 +24,9 @@ public abstract class Projectile : MonoBehaviour
 
     [Header ("Physics/Transform Animation")] // Editable attributes about physics based animation, mainly spinning
     [SerializeField] public bool _spins = false;         // Does the projectile spin
-    [SerializeField] public float _spinSpeed = 100f;    // How fast the projectile spins
+    [SerializeField] public float _spinSpeed = 1f;    // How fast the projectile spins
     [SerializeField] public bool _waves = false;
-    [SerializeField] public float _waveLength = 1f;
+    [SerializeField] public float _waveLength = 0.5f;
     [SerializeField] public float _waveSpeed = 1f;
 
     /// <summary>
@@ -64,8 +64,9 @@ public abstract class Projectile : MonoBehaviour
 
         if (_waves)
         {
-            //transform.position += new Vector3(Mathf.Sin(Time.time * _waveSpeed), 0.0f, 0.0f) * _waveLength;
-            transform.position += new Vector3(Mathf.Sin(Time.time * _waveSpeed) * Time.deltaTime * _waveLength , 0f, 0f);
+            Vector3 _sine = new Vector3(Mathf.Sin(Time.time * _waveSpeed) * Time.deltaTime * _waveLength, 0f, 0f);
+            float _angle = Vector2.Angle(targetDirection, Vector3.up);
+            transform.position += Quaternion.AngleAxis(_angle, Vector3.back) * _sine;
         }
     }
 
