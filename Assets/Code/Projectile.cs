@@ -16,13 +16,15 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField] public float _timeToLive = 10f;   // How many seconds the projectile lives for
 
     [Header ("Components")] // Components the script needs to work
-    [SerializeField] private Rigidbody2D _rb = null;    // 2D Rigidbody of the projectile
+    private Rigidbody2D _rb = null;    // 2D Rigidbody of the projectile
 
     [Header ("Internals")] // Variables the script uses to function
-    [SerializeField] private float _timeAlive = 0f;         // How long the projectile has been alive
-    [SerializeField] private Vector2 targetDirection = Vector2.zero;
+    private float _timeAlive = 0f;         // How long the projectile has been alive
+    private Vector2 targetDirection = Vector2.zero;
 
     [Header ("Physics/Transform Animation")] // Editable attributes about physics based animation, mainly spinning
+    [SerializeField] public bool _faceTarget = false;
+    [SerializeField] public float _rotationOffset = 45;
     [SerializeField] public bool _spins = false;         // Does the projectile spin
     [SerializeField] public float _spinSpeed = 1f;    // How fast the projectile spins
     [SerializeField] public bool _waves = false;
@@ -44,10 +46,10 @@ public abstract class Projectile : MonoBehaviour
     /// <param name="targetPos">The position the projectile is fired at</param>
     public virtual void Fire(Vector2 targetPos)
     {
-        StartPhysAnim();   // Starts physics based animation, such as spinning
-
         targetDirection = (targetPos - (Vector2) transform.position).normalized;
         _rb.AddForce(targetDirection * _speed, ForceMode2D.Impulse);
+
+        StartPhysAnim();   // Starts physics based animation, such as spinning
     }
 
     /// <summary>
@@ -79,6 +81,11 @@ public abstract class Projectile : MonoBehaviour
             _rb.AddTorque(_spinSpeed, ForceMode2D.Impulse); // Make projectile spin
             /*  NTS: It's possible this could harm future features, because the whole object is spinning
                 If that happens, make the sprite a seperate gameobject? */
+        }
+
+        if (_faceTarget) {
+            float offsetRotation = Vector2.Angle(targetDirection, Vector3.down) - _rotationOffset - 90f;
+            transform.Rotate(0, 0, offsetRotation);
         }
     }
 
