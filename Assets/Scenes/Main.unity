@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  _invincibilityTime: 2
+  _flashingInterval: 0.05
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,11 +659,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d020f00e1e5629140a1aacbec71bdc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawningFrequency: 1
+  _spawningFrequency: 5
   _timeSinceLastSpawn: 0
   _spawner: {fileID: 0}
   _playerObj: {fileID: 19037248}
-  _proj: {fileID: -4498279522215748706, guid: 6c472cecb2884684cb2c51313e8cd1c0, type: 3}
+  _proj: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
 --- !u!1 &1902605909
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,71 +696,6 @@ Transform:
   - {fileID: 1004876582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1405010633793829685
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 665245441521126389, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8507439092033950940, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8507439092033950940, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1698576655
-      objectReference: {fileID: 0}
-    - target: {fileID: 9032997542310611467, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
-      propertyPath: m_Name
-      value: Fish (Evil)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
 --- !u!1001 &1916468578472668254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -777,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1438817797755880726, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1438817797755880726, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: m_SortingLayerID
@@ -839,4 +776,3 @@ SceneRoots:
   - {fileID: 1916468578472668254}
   - {fileID: 1902605910}
   - {fileID: 1769475046}
-  - {fileID: 1405010633793829685}
