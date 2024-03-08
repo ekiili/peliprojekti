@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 22d9feb1a736fa6449e868bbb26ec3c8
+=======
+guid: acb0330ef8b675542b919a0a86562981
+>>>>>>> Health-and-Damage
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

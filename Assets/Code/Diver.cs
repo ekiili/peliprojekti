@@ -48,6 +48,7 @@ public class Diver : MonoBehaviour
     }
     public void Die()
     {
+        Debug.Log("Player has died");
         gameObject.SetActive(false);
     }
 }
