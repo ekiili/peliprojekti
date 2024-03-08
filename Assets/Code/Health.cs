@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float _health = 3f;
-    [SerializeField] private float _invincibilityTime = 2f;
-    [SerializeField] private float _timeSinceChange = 0.75f;
+    [SerializeField] public float _health = 3f;
+    [SerializeField] public float _invincibilityTime = 2f;
+    [SerializeField] public float _flashingInterval = 0.05f;
+    
     SpriteRenderer _spriteRenderer;
     private bool _isVisible = true;
     private bool _isInvincible = false;
+    private float _invincibilityTimer = 2f;
+    private float _visiblityTimer = 0.05f;
 
     public void Awake()
     {
@@ -18,32 +21,35 @@ public class Health : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (_isInvincible)
-        {
-            _invincibilityTime -= Time.deltaTime;
-            if (_invincibilityTime >= 0 && _isVisible)
-            {
-                _spriteRenderer.enabled = false;
-                _isVisible = false;
-            }
-            else if (_invincibilityTime >= 0 && !_isVisible)
-            {
-                _spriteRenderer.enabled = true;
-                _isVisible = true;
-            }
-            else if (_invincibilityTime <= 0)
-            {
-                Debug.Log("Player is no longer invincible");
-                _isInvincible = false;
-                _spriteRenderer.enabled = true;
-                _isVisible = true;
-                _invincibilityTime = 2f;
+        // Invincibility flashing //
+        if (_isInvincible) {                                // If invincible
+            _invincibilityTimer -= Time.deltaTime;              // Update invinciblity timer
+            _visiblityTimer -= Time.deltaTime;                  // Update flashing timer
+
+            if (_invincibilityTimer < 0) {                      // If out of invincibility time
+                _invincibilityTimer = _invincibilityTime;           // Reset invincibility timer
+                _isInvincible = false;                              // Set to status vincible
+                _spriteRenderer.enabled = true;                     // Make visible
+            } else if (_visiblityTimer < 0) {                   // If next flash state
+                if (_isVisible) {                                   // If visible
+                    _spriteRenderer.enabled = false;                    // Make invisible
+                    _isVisible = false;                                 // Set flash status
+                    _visiblityTimer = _flashingInterval;                // Reset flashing timer
+                } else if (!_isVisible) {                           // If invisible
+                    _spriteRenderer.enabled = true;                     // Make visible
+                    _isVisible = true;                                  // Set flash status
+                    _visiblityTimer = _flashingInterval;                // Reset flashing timer
+                }
             }
         }
-
     }
     public void TakeDamage(float _damage)
     {
+        if (_health <= 0)
+        {
+            gameObject.GetComponent<Diver>().Die();
+        }
+
         if(!_isInvincible)
         {
             _health -= _damage;
@@ -51,10 +57,7 @@ public class Health : MonoBehaviour
             _isInvincible = true;
             Debug.Log("Player is invincible");
         }
-        if (_health <= 0)
-        {
-            gameObject.GetComponent<Diver>().Die();
-        }
+        
     }
     public void Heal(float heal)
     {
