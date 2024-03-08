@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    private GameObject playerObj = null;
-
-    void Start()
+    [SerializeField] private float _damage = 1f;
+    void OnTriggerEnter2D(Collider2D other)
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    void onTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject == playerObj)
+        if (other.gameObject.GetComponent<Health>() != null)
         {
-            playerObj.GetComponent<Diver>().Die();
+            other.gameObject.GetComponent<Health>().TakeDamage(_damage);
         }
     }
 }
