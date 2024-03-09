@@ -20,6 +20,11 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] public float _maxX = 3f;
     [SerializeField] public float _maxY = 3f;
 
+    public enum ProjectileType {
+        other,
+        evil,
+        trash
+    }
     [Header ("Internals")]
     private float _timeSinceLastSpawn = 0f;
     private Vector2 _randomTargetPos = Vector2.zero;
@@ -29,14 +34,16 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private GameObject _playerObj = null;
 
     [Header ("Evil projectiles")]
+    [SerializeField] private float _maxEvils = 10f;
     [SerializeField] public Projectile _evilTier1 = null;
     [SerializeField] public Projectile _evilTier2 = null;
     [SerializeField] public Projectile _evilTier3 = null;
     /*  NTS: Code other evil tiers. */
 
     [Header ("Trash projectiles")]
+    [SerializeField] private float _maxTrash = 2f;
     [SerializeField] public Projectile _metalTier1 = null;
-    [SerializeField] public Projectile _metalTier2 = null;
+    [SerializeField] public Projectile _plasticTier1 = null;
     /*  NTS: Add more trash types. */
 
     
@@ -93,12 +100,15 @@ public class SpawningManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_timeSinceLastSpawn > _spawningFrequency)
+
+        // Trash Spawning //
+
+        if (_timeSinceLastSpawn > _spawningFrequency && _spawner._liveEvils.Count < _maxEvils)
         {
             GoToRandomPosition();
             _randomTargetPos = GetRandomPosition();
             _timeSinceLastSpawn = 0f;
-            _spawner.FireProjectileAtPos(_evilTier1, _randomTargetPos);
+            _spawner.FireProjectileAtPos(_evilTier1, _randomTargetPos, ProjectileType.evil);
             //_spawner.FireProjectileAtObj(_evilTier2, _playerObj);
         }
         _timeSinceLastSpawn += Time.fixedDeltaTime;
