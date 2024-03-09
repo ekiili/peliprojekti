@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicProjectile : Projectile
+public class TeleportProjectile : Projectile
 {
     public override void Fire(Vector2 targetPos)
     {
-        base.Fire(targetPos);
+        transform.position = (Vector3) targetPos;
+        StartPhysAnim();
     }
 }
