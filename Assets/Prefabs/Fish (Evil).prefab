@@ -164,9 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1
   _timeToLive: 10
-  _faceTarget: 1
+  _rotAnimType: 1
   _rotationOffset: 45
-  _spins: 0
   _spinSpeed: 1
   _waves: 0
   _waveLength: 0.5
