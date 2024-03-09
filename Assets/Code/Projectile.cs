@@ -22,14 +22,13 @@ public abstract class Projectile : MonoBehaviour
     private float _timeAlive = 0f;         // How long the projectile has been alive
     private Vector2 targetDirection = Vector2.zero;
 
-    [Header ("Physics/Transform Animation")] // Editable attributes about physics based animation, mainly spinning
-
     public enum RotationAnimation {
         none,           // No changes to rotation
         faceTarget,     // Faces target position/object at launch
         spin            // Spins constantly
         /*  NTS: Add one that faces target constantly? */
     }
+    [Header ("Physics/Transform Animation Settings")] // Editable attributes about physics based animation, position or rotation offsetting etc.
     [SerializeField] public RotationAnimation _rotAnimType = RotationAnimation.none;
     [SerializeField] public float _rotationOffset = 45; // If faces target, how much to offset rotation
     [SerializeField] public float _spinSpeed = 1f;      // If spins, how fast the projectile spins
