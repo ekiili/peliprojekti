@@ -7,25 +7,26 @@ using Vector2 = UnityEngine.Vector2;
 public class SpawningManager : MonoBehaviour
 {
     public enum SpawnerOrientation {
+        none,
         north,
         east,
         south,
         west
     }
     [Header ("Attributes")]
+    [SerializeField] public float _startOffset = 1f;
     [SerializeField] public float _spawningFrequency = 5f;
-    [SerializeField] public SpawnerOrientation _orientation = SpawnerOrientation.north;
+    [SerializeField] public SpawnerOrientation _orientation = SpawnerOrientation.none;
     [SerializeField] public float _maxX = 3f;
     [SerializeField] public float _maxY = 3f;
 
     [Header ("Internals")]
     private float _timeSinceLastSpawn = 0f;
-    private bool _vertical = true;
+    private Vector2 _randomTargetPos = Vector2.zero;
 
     [Header ("Components")]
     [SerializeField] private ProjectileSpawner _spawner = null;
     [SerializeField] private GameObject _playerObj = null;
-    [SerializeField] private GameObject _baitObj = null;
 
     [Header ("Evil projectiles")]
     [SerializeField] public Projectile _evilTier1 = null;
@@ -44,34 +45,16 @@ public class SpawningManager : MonoBehaviour
     {
         _spawner = GetComponent<ProjectileSpawner>();
         _playerObj = GameObject.FindGameObjectWithTag("Player");
-        //_baitObj = GameObject.FindGameObjectWithTag("Bait");
 
-        switch (_orientation) {
-            case SpawnerOrientation.north:
-            {
-                _vertical = true;
-                return;
-            }
-            case SpawnerOrientation.east:
-            {
-                _vertical = false;
-                return;
-            }
-            case SpawnerOrientation.south:
-            {
-                _vertical = true;
-                return;
-            }
-            case SpawnerOrientation.west:
-            {
-                _vertical = false;
-                return;
-            }
-        }
+        _timeSinceLastSpawn -= _startOffset;
     }
 
     void GoToRandomPosition() {
         switch (_orientation) {
+            case SpawnerOrientation.none:
+            {
+                return;
+            }
             case SpawnerOrientation.north:
             {
                 float _newX = Random.Range(_maxX, -_maxX);
@@ -99,13 +82,24 @@ public class SpawningManager : MonoBehaviour
         }
     }
 
+    Vector2 GetRandomPosition()
+    {
+        return new Vector2
+        (
+            Random.Range(_maxX, -_maxX),
+            Random.Range(_maxY, -_maxY)
+        );
+    }
+
     void FixedUpdate()
     {
         if (_timeSinceLastSpawn > _spawningFrequency)
         {
             GoToRandomPosition();
+            _randomTargetPos = GetRandomPosition();
             _timeSinceLastSpawn = 0f;
-            _spawner.FireProjectileAtObj(_evilTier1, _playerObj);
+            _spawner.FireProjectileAtPos(_evilTier1, _randomTargetPos);
+            //_spawner.FireProjectileAtObj(_evilTier2, _playerObj);
         }
         _timeSinceLastSpawn += Time.fixedDeltaTime;
     }

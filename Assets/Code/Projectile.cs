@@ -20,7 +20,8 @@ public abstract class Projectile : MonoBehaviour
 
     [Header ("Internals")] // Variables the script uses to function
     private float _timeAlive = 0f;         // How long the projectile has been alive
-    private Vector2 targetDirection = Vector2.zero;
+    private Vector2 _targetPosition = Vector2.zero;
+    private Vector2 _targetDirection = Vector2.zero;
 
     public enum RotationAnimation {
         none,           // No changes to rotation
@@ -51,8 +52,9 @@ public abstract class Projectile : MonoBehaviour
     /// <param name="targetPos">The position the projectile is fired at</param>
     public virtual void Fire(Vector2 targetPos)
     {
-        targetDirection = (targetPos - (Vector2) transform.position).normalized;
-        _rb.AddForce(targetDirection * _speed, ForceMode2D.Impulse);
+        _targetPosition = targetPos;
+        _targetDirection = (targetPos - (Vector2) transform.position).normalized;
+        _rb.AddForce(_targetDirection * _speed, ForceMode2D.Impulse);
 
         StartPhysAnim();   // Starts physics based animation, such as spinning
     }
@@ -72,7 +74,7 @@ public abstract class Projectile : MonoBehaviour
         if (_waves)
         {
             Vector3 _sine = new Vector3(Mathf.Sin(Time.time * _waveSpeed) * Time.deltaTime * _waveLength, 0f, 0f);
-            float _angle = Vector2.Angle(targetDirection, Vector3.up);
+            float _angle = Vector2.Angle(_targetDirection, Vector3.up);
             transform.position += Quaternion.AngleAxis(_angle, Vector3.back) * _sine;
         }
     }
@@ -86,9 +88,9 @@ public abstract class Projectile : MonoBehaviour
             _rb.AddTorque(_spinSpeed, ForceMode2D.Impulse);         // Make projectile spin
             /*  NTS: It's possible this could harm future features, because the whole object is spinning
                 If that happens, make the sprite a seperate gameobject? */
-        } else if (_rotAnimType == RotationAnimation.faceTarget) {                                          // If facing target is enabled
-            float offsetRotation = Vector2.Angle(targetDirection, Vector3.down) - _rotationOffset - 90f;    // Calculate and offset rotation to target
-            transform.Rotate(0, 0, offsetRotation);                                                         // Rotate projectile
+        } else if (_rotAnimType == RotationAnimation.faceTarget) {                                              // If facing target is enabled
+            Vector2 _offsetDirection = Quaternion.Euler(0f, 0f, _rotationOffset) * _targetDirection;
+            transform.up = _offsetDirection;
         }
     }
 
