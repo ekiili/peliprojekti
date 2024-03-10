@@ -98,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca336d38edfc2c84990473139bca110d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firedProjectiles: []
+  _liveAll: []
+  _liveEvils: []
+  _liveTrash: []
 --- !u!114 &6214984915323568827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +120,10 @@ MonoBehaviour:
   _maxY: 3
   _spawner: {fileID: 952300873517723581}
   _playerObj: {fileID: 0}
+  _maxEvils: 10
   _evilTier1: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _evilTier2: {fileID: 358459458886875373, guid: 9faa69862e086114fb9a54d724e74202, type: 3}
   _evilTier3: {fileID: 0}
+  _maxTrash: 2
   _metalTier1: {fileID: 0}
-  _metalTier2: {fileID: 0}
+  _plasticTier1: {fileID: 0}
