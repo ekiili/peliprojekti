@@ -18,18 +18,18 @@ public class PlayerTouchMovement : MonoBehaviour
     private void OnEnable()
     {
         EnhancedTouchSupport.Enable();
-        ETouch.Touch.onFingerDown += Touch_onFingerDown;
-        ETouch.Touch.onFingerUp += Touch_onFingerUp;
-        ETouch.Touch.onFingerMove += Touch_onFingerMove;
+        ETouch.Touch.onFingerDown += FingerDown;
+        ETouch.Touch.onFingerUp += FingerUp;
+        ETouch.Touch.onFingerMove += FingerMove;
     }
     private void OnDisable()
     {
-        ETouch.Touch.onFingerDown -= Touch_onFingerDown;
-        ETouch.Touch.onFingerUp -= Touch_onFingerUp;
-        ETouch.Touch.onFingerMove -= Touch_onFingerMove;
+        ETouch.Touch.onFingerDown -= FingerDown;
+        ETouch.Touch.onFingerUp -= FingerUp;
+        ETouch.Touch.onFingerMove -= FingerMove;
         EnhancedTouchSupport.Disable();
     }
-    private void Touch_onFingerMove(Finger MovedFinger)
+    private void FingerMove(Finger MovedFinger)
     {
         if (MovedFinger == MovementFinger)
         {
@@ -39,7 +39,7 @@ public class PlayerTouchMovement : MonoBehaviour
 
             if (Vector2.Distance(currentTouch.screenPosition,Joystick.RectTransform.anchoredPosition) > maxMovement)
             {
-                knobPosition = (currentTouch.screenPosition - Joystick.RectTransform.anchoredPosition).normalized / maxMovement;
+                knobPosition = (currentTouch.screenPosition - Joystick.RectTransform.anchoredPosition) / maxMovement;
             }
             else
             {
@@ -50,7 +50,7 @@ public class PlayerTouchMovement : MonoBehaviour
         }
     }
 
-    private void Touch_onFingerUp(Finger LostFinger)
+    private void FingerUp(Finger LostFinger)
     {
         if (LostFinger == MovementFinger)
         {
@@ -61,7 +61,7 @@ public class PlayerTouchMovement : MonoBehaviour
         }
     }
 
-    private void Touch_onFingerDown(Finger TouchedFinger)
+    private void FingerDown(Finger TouchedFinger)
     {
         if (MovementFinger == null)
         {
