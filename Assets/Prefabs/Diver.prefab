@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6893674032106859253}
   - component: {fileID: 1438817797755880726}
-  - component: {fileID: 8543645375747894230}
+  - component: {fileID: 819806771962139710}
   - component: {fileID: 5957162285879721919}
   - component: {fileID: 2331137079750349076}
-  - component: {fileID: 819806771962139710}
+  - component: {fileID: 3749698278576031269}
   m_Layer: 0
   m_Name: Diver
   m_TagString: Untagged
@@ -88,21 +88,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8543645375747894230
-MonoBehaviour:
+--- !u!50 &819806771962139710
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334334947416081051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b379f50e0a631c478b4d304fde2d093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rb: {fileID: 0}
-  movementInput: {x: 0, y: 0}
-  swimSpeed: 1
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!70 &5957162285879721919
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,32 +163,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
-  movementInput: {x: 0, y: 0}
-  swimSpeed: 1
---- !u!50 &819806771962139710
-Rigidbody2D:
-  serializedVersion: 4
+  _movementInput: {x: 0, y: 0}
+  _swimSpeed: 1
+--- !u!114 &3749698278576031269
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334334947416081051}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf22faa147a7274c8d0313992c50b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 3
+  _invincibilityTime: 2
+  _timeSinceChange: 0.75

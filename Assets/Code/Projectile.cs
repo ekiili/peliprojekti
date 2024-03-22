@@ -16,15 +16,23 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField] public float _timeToLive = 10f;   // How many seconds the projectile lives for
 
     [Header ("Components")] // Components the script needs to work
-    [SerializeField] private Rigidbody2D _rb = null;    // 2D Rigidbody of the projectile
+    private Rigidbody2D _rb = null;    // 2D Rigidbody of the projectile
 
     [Header ("Internals")] // Variables the script uses to function
-    [SerializeField] private float _timeAlive = 0f;         // How long the projectile has been alive
-    [SerializeField] private Vector2 targetDirection = Vector2.zero;
+    private float _timeAlive = 0f;         // How long the projectile has been alive
+    private Vector2 _targetPosition = Vector2.zero;
+    private Vector2 _targetDirection = Vector2.zero;
 
-    [Header ("Physics/Transform Animation")] // Editable attributes about physics based animation, mainly spinning
-    [SerializeField] public bool _spins = false;         // Does the projectile spin
-    [SerializeField] public float _spinSpeed = 1f;    // How fast the projectile spins
+    public enum RotationAnimation {
+        none,           // No changes to rotation
+        faceTarget,     // Faces target position/object at launch
+        spin            // Spins constantly
+        /*  NTS: Add one that faces target constantly? */
+    }
+    [Header ("Physics/Transform Animation Settings")] // Editable attributes about physics based animation, position or rotation offsetting etc.
+    [SerializeField] public RotationAnimation _rotAnimType = RotationAnimation.none;
+    [SerializeField] public float _rotationOffset = 45; // If faces target, how much to offset rotation
+    [SerializeField] public float _spinSpeed = 1f;      // If spins, how fast the projectile spins
     [SerializeField] public bool _waves = false;
     [SerializeField] public float _waveLength = 0.5f;
     [SerializeField] public float _waveSpeed = 1f;
@@ -44,10 +52,11 @@ public abstract class Projectile : MonoBehaviour
     /// <param name="targetPos">The position the projectile is fired at</param>
     public virtual void Fire(Vector2 targetPos)
     {
-        StartPhysAnim();   // Starts physics based animation, such as spinning
+        _targetPosition = targetPos;
+        _targetDirection = (targetPos - (Vector2) transform.position).normalized;
+        _rb.AddForce(_targetDirection * _speed, ForceMode2D.Impulse);
 
-        targetDirection = (targetPos - (Vector2) transform.position).normalized;
-        _rb.AddForce(targetDirection * _speed, ForceMode2D.Impulse);
+        StartPhysAnim();   // Starts physics based animation, such as spinning
     }
 
     /// <summary>
@@ -65,20 +74,23 @@ public abstract class Projectile : MonoBehaviour
         if (_waves)
         {
             Vector3 _sine = new Vector3(Mathf.Sin(Time.time * _waveSpeed) * Time.deltaTime * _waveLength, 0f, 0f);
-            float _angle = Vector2.Angle(targetDirection, Vector3.up);
+            float _angle = Vector2.Angle(_targetDirection, Vector3.up);
             transform.position += Quaternion.AngleAxis(_angle, Vector3.back) * _sine;
         }
     }
 
     /// <summary>
-    /// Used to start spinning.
+    /// Used to start physics animation depending on projectile settings.
     /// </summary>
     public virtual void StartPhysAnim()
     {
-        if (_spins) {                                       // If spinning is enabled
-            _rb.AddTorque(_spinSpeed, ForceMode2D.Impulse); // Make projectile spin
+        if (_rotAnimType == RotationAnimation.spin) {               // If spinning is enabled
+            _rb.AddTorque(_spinSpeed, ForceMode2D.Impulse);         // Make projectile spin
             /*  NTS: It's possible this could harm future features, because the whole object is spinning
                 If that happens, make the sprite a seperate gameobject? */
+        } else if (_rotAnimType == RotationAnimation.faceTarget) {                                              // If facing target is enabled
+            Vector2 _offsetDirection = Quaternion.Euler(0f, 0f, _rotationOffset) * _targetDirection;
+            transform.up = _offsetDirection;
         }
     }
 
