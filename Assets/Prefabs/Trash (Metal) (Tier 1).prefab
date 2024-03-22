@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2354696447832270718}
   - component: {fileID: 6956518085998084506}
   - component: {fileID: 4711264129106267078}
+  - component: {fileID: 536514477376330362}
   m_Layer: 0
   m_Name: Trash (Metal) (Tier 1)
   m_TagString: Untagged
@@ -163,3 +164,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashType: 0
   _value: 1
+--- !u!114 &536514477376330362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055687713170575857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2dd9673dafb3047a6fd8d509f443ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1
+  _timeToLive: 10
+  _rotAnimType: 0
+  _rotationOffset: 45
+  _spinSpeed: 1
+  _waves: 0
+  _waveLength: 0.5
+  _waveSpeed: 1

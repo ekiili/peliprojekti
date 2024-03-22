@@ -39,7 +39,7 @@ public class PlayerTouchMovement : MonoBehaviour
 
             if (Vector2.Distance(currentTouch.screenPosition,Joystick.RectTransform.anchoredPosition) > maxMovement)
             {
-                knobPosition = (currentTouch.screenPosition - Joystick.RectTransform.anchoredPosition) / maxMovement;
+                knobPosition = (currentTouch.screenPosition - Joystick.RectTransform.anchoredPosition).normalized * maxMovement;
             }
             else
             {
