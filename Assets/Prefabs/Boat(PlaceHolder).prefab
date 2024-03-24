@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b246dbee3ba435e42930378ab0139788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoatSpeed: 0.7
+  BoatSpeed: 2
   TimeToKill: 20
 --- !u!50 &-2942944757846906237
 Rigidbody2D:
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trash: {fileID: 4431273540230910791, guid: bfa01c44ffbe2a847af63cc4972ba27c, type: 3}
-  _SpawnRateMin: 0
-  _SpawnRateMax: 2
-  _TimeToNextSpawn: 5
+  _SpawnRateMin: 1
+  _SpawnRateMax: 3
+  _TimeToNextSpawn: 2
 --- !u!114 &-8797732277291240146
 MonoBehaviour:
   m_ObjectHideFlags: 0

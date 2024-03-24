@@ -7,7 +7,8 @@ using UnityEngine;
 public class SandManager : MonoBehaviour
 {
     private Collector _collector = null;    // For collecting trash that falls to the bottom
-    private float _trashLevel = 0f;     // For keeping count of lost trash
+    public float _trashLevel = 0f;          // For keeping count of lost trash
+    public float _sandHeight = 0f;
     private Collider2D _collider = null;
     [Header("Components")]
     [Tooltip("This is the gameobject that defines where the sand starts")]
@@ -38,6 +39,8 @@ public class SandManager : MonoBehaviour
         if (_evilSand.transform.localPosition.y > 0) {
             _collider.offset = new Vector2(0, _evilSand.transform.localPosition.y - 0.1f);
         }
+
+        _sandHeight = _collider.offset.y;
     }
 
     public void moveEvilSand(float _change) {
