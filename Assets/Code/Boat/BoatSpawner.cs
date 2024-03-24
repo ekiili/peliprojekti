@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class BoatSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject boatPrefab;
+    [SerializeField] private Boat _Boat;
     [SerializeField] private GameObject SpawnLeft;
     [SerializeField] private GameObject SpawnRight;
     [SerializeField] private float RandowmSpawnTimeMin = 5f;
     [SerializeField] private float RandowmSpawnTimeMax = 10f;
-    [SerializeField] private float BoatSpeed = 1f;
-    [SerializeField] private Rigidbody2D _rb;
+
     private SpawnPoint _SpawnPoint;
-    public Boolean BoatAlive = false;
-    private int TimeFromLastSpawn = 0;
+    public static bool BoatAlive = false;
+    private float TimeFromLastSpawn = 0;
+    [Tooltip("Used to set time for first spawn.")]
+    [SerializeField] private float NextSpawnTime = 5;
 
     private enum SpawnPoint
     {
@@ -22,12 +23,8 @@ public class BoatSpawner : MonoBehaviour
         Right
     }
 
-    void Awake()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-    }
 
-    int GetRandomTime()
+    float GetRandomTime()
     {
         return UnityEngine.Random.Range((int)RandowmSpawnTimeMin, (int)RandowmSpawnTimeMax);
     }
@@ -37,20 +34,29 @@ public class BoatSpawner : MonoBehaviour
         BoatAlive = true;
         if (_SpawnPoint == SpawnPoint.Left)
         {
-            GameObject boat = Instantiate(boatPrefab, SpawnLeft.transform.position, Quaternion.identity);
-
+            Boat newBoat = Instantiate(_Boat, SpawnLeft.transform.position, Quaternion.identity);
+            newBoat.LaunchBoat(Vector2.right);
         }
         else
         {
-            GameObject boat = Instantiate(boatPrefab, SpawnRight.transform.position, Quaternion.identity);
-
+            Boat newBoat = Instantiate(_Boat, SpawnRight.transform.position, Quaternion.identity);
+            newBoat.LaunchBoat(Vector2.left);
         }
+        NextSpawnTime = GetRandomTime();
 
     }
 
     void FixedUpdate()
     {
-
-
+        if (!BoatAlive)
+        {
+            TimeFromLastSpawn += Time.fixedDeltaTime;
+            if (TimeFromLastSpawn >= NextSpawnTime)
+            {
+                _SpawnPoint = (SpawnPoint)UnityEngine.Random.Range(0, 2);
+                SpawnBoat();
+                TimeFromLastSpawn = 0;
+            }
+        }
     }
 }
