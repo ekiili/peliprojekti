@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 5957162285879721919}
   - component: {fileID: 2331137079750349076}
   - component: {fileID: 3749698278576031269}
+  - component: {fileID: 5930500716722594211}
+  - component: {fileID: 8260520729513141801}
   m_Layer: 0
   m_Name: Diver
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,10 +76,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1750239631
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c10aa27303a933d4fb05ef49ae039ec1, type: 3}
+  m_Sprite: {fileID: -1850287907, guid: 98581d594bf08c24e933ddad0a10874c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +150,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 0.4, y: 0.8}
   m_Direction: 0
 --- !u!114 &2331137079750349076
 MonoBehaviour:
@@ -164,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
   _movementInput: {x: 0, y: 0}
-  _swimSpeed: 1
+  _swimSpeed: 2
 --- !u!114 &3749698278576031269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +179,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf22faa147a7274c8d0313992c50b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
-  _invincibilityTime: 2
-  _timeSinceChange: 0.75
+  _health: 30
+  _invincibilityTime: 3
+  _flashingInterval: 0.05
+--- !u!114 &5930500716722594211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334334947416081051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe945213934b404fb675fb42e1a60e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _totalCount: 0
+  _metalCount: 0
+  _plasticCount: 0
+--- !u!114 &8260520729513141801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334334947416081051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5949837a060ad40810cb01aa371b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JoystickSize: {x: 300, y: 300}
+  Joystick: {fileID: 0}
+  _rb: {fileID: 819806771962139710}
+  _speed: 1
