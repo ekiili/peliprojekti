@@ -5,10 +5,12 @@ using UnityEngine;
 public class Collector : MonoBehaviour
 {
     [Header ("Counters")]
+    [SerializeField] public float _totalCount = 0f;
     [SerializeField] public float _metalCount = 0f;
     [SerializeField] public float _plasticCount = 0f;
     public void CollectedTrash(Collectible.TrashType _trashType, float _value) {
         Debug.Log("Trash type:" + _trashType + " collected at value:" + _value);
+        _totalCount += _value;
 
         switch (_trashType) {
             case Collectible.TrashType.metal: {
@@ -20,5 +22,9 @@ public class Collector : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public float getTotal() {
+        return _totalCount;
     }
 }
