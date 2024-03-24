@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c94917f8c0857c146b24b188ed67c169, type: 3}
-  m_Color: {r: 0, g: 0.39399385, b: 1, a: 1}
+  m_Color: {r: 0.47274056, g: 0.754717, b: 0.19579923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _timeToLive: 10
+  _timeToLive: 25
   _rotAnimType: 1
   _rotationOffset: 45
   _spinSpeed: 1

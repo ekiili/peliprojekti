@@ -41,7 +41,7 @@ public class SpawningManager : MonoBehaviour
     /*  NTS: Code other evil tiers. */
 
     [Header ("Trash projectiles")]
-    [SerializeField] private float _maxTrash = 2f;
+    // [SerializeField] private float _maxTrash = 2f;
     [SerializeField] public Projectile _metalTier1 = null;
     [SerializeField] public Projectile _plasticTier1 = null;
     /*  NTS: Add more trash types. */
