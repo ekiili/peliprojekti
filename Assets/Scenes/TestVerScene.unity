@@ -272,9 +272,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diver
       objectReference: {fileID: 0}
+    - target: {fileID: 819806771962139710, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1438817797755880726, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: m_MaskInteraction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930500716722594211, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: _isPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930500716722594211, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: _canCollectDeadFish
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6893674032106859253, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: m_LocalScale.x
@@ -381,12 +393,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b109e8761211ad843a90a7890682f2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Boat: {fileID: 5990726530774577647, guid: 4de8c793e319fb547a40f55730c62d5e, type: 3}
+  _boat: {fileID: 0}
   SpawnLeft: {fileID: 1760418622}
   SpawnRight: {fileID: 1104598433}
-  RandowmSpawnTimeMin: 3
-  RandowmSpawnTimeMax: 7
-  NextSpawnTime: 3
+  _minTimeBetweenSpawns: 5
+  _maxTimeBetweenSpawns: 10
+  _timeBetweenDifficultyIncrease: 15
+  _difficultyIncrease: 0.1
+  _timeBetweenSpawns: 5
 --- !u!4 &992850822
 Transform:
   m_ObjectHideFlags: 0
@@ -454,6 +468,10 @@ PrefabInstance:
     - target: {fileID: 6741444545514656775, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325746238237077293, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7595755373083411900, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_Pivot.x
@@ -535,10 +553,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7727784094349329331, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: checkPaddingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7727784094349329331, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_enableExtraPadding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7900361091783753140, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7900361091783753140, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864430736}
   m_SourcePrefab: {fileID: 100100000, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
 --- !u!1 &1143155013
 GameObject:
@@ -572,7 +605,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _timeBetweenSpawns: 2
+  _timeBetweenDifficultyIncrease: 15
+  _difficultyIncrease: 0.1
   _arenaHeight: 6
+  _topOffset: 1
+  _bottomOffset: 1
+  _arenaWidth: 10.7
   _side: 0
 --- !u!212 &1143155015
 SpriteRenderer:
@@ -673,7 +711,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _timeBetweenSpawns: 2
+  _timeBetweenDifficultyIncrease: 15
+  _difficultyIncrease: 0.1
   _arenaHeight: 6
+  _topOffset: 1
+  _bottomOffset: 1
+  _arenaWidth: 10.7
   _side: 1
 --- !u!212 &1308496048
 SpriteRenderer:
@@ -843,6 +886,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 992850822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1864430734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7900361091783753140, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+  m_PrefabInstance: {fileID: 1126032432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1864430736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864430734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c40449dacd34f743991d7c2f55f8da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 0}
 --- !u!1 &1920914063
 GameObject:
   m_ObjectHideFlags: 0

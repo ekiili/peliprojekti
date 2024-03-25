@@ -46,6 +46,11 @@ public class Diver : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(Vector3.forward, _movementInput);
         }
     }
+    public void PushPlayer(float _pushForce)
+    {
+        _rb.AddForce(Vector2.down * _pushForce, ForceMode2D.Impulse);
+        Debug.Log("Pushed player");
+    }
     public void Die()
     {
         Debug.Log("Player has died");
