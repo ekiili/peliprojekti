@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spawner
   - Sand
+  - Trash
+  - DeadFish
   layers:
   - Default
   - TransparentFX

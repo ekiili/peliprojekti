@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1400652740219154690}
   - component: {fileID: 5734466581589610343}
-  - component: {fileID: 2461742660809919509}
   - component: {fileID: -3151618677653547678}
   - component: {fileID: -4332762226560819375}
   - component: {fileID: -7708200093886985756}
   m_Layer: 0
   m_Name: tin_can
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
---- !u!114 &2461742660809919509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4431273540230910791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8554bf38127971c4585db6d189810b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-3151618677653547678
 Rigidbody2D:
   serializedVersion: 4

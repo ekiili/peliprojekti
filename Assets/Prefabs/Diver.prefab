@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3749698278576031269}
   - component: {fileID: 5930500716722594211}
   - component: {fileID: 8260520729513141801}
+  - component: {fileID: 3380548902435985802}
   m_Layer: 0
   m_Name: Diver
   m_TagString: Player
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf22faa147a7274c8d0313992c50b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 30
+  _health: 3
   _invincibilityTime: 3
   _flashingInterval: 0.05
 --- !u!114 &5930500716722594211
@@ -194,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe945213934b404fb675fb42e1a60e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canCollectDeadFish: 1
+  _isPlayer: 0
   _totalCount: 0
   _metalCount: 0
   _plasticCount: 0
@@ -213,3 +216,16 @@ MonoBehaviour:
   Joystick: {fileID: 0}
   _rb: {fileID: 819806771962139710}
   _speed: 1
+--- !u!114 &3380548902435985802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334334947416081051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4fa42fa4550fb7489a144e96451f732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 0

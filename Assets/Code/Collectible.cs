@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
     public enum TrashType {
         metal,
-        plastic
+        plastic,
+        deadFish
     }
     [Header ("Attributes")]
     [SerializeField] private TrashType _trashType = TrashType.metal;
@@ -16,13 +18,16 @@ public class Collectible : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Collector>() != null)
         {
-            other.gameObject.GetComponent<Collector>().CollectedTrash(_trashType, _value);
-            Die();
+            bool collected = other.gameObject.GetComponent<Collector>().CollectedTrash(_trashType, _value);
+            if (collected)
+            {
+                Die();
+            }
         }
     }
 
     public void Die()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
