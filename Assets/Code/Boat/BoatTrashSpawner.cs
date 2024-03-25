@@ -21,7 +21,7 @@ public class BoatTrashSpawner : MonoBehaviour
     void FixedUpdate()
     {
         _TimeFromLastSpawn += Time.fixedDeltaTime;
-        if (_TimeFromLastSpawn >= _TimeToNextSpawn)
+        if (_TimeFromLastSpawn >= _TimeToNextSpawn && (transform.position.x > -4.5 && transform.position.x < 4.5))
         {
             SpawnTrash();
             _TimeFromLastSpawn = 0;

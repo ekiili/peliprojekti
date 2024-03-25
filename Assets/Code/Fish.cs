@@ -29,6 +29,5 @@ public class Fish : MonoBehaviour
         _rb.gravityScale = 0.01f;
         _sr.flipX = true;
         transform.gameObject.tag = "DeadFish";
-        gameObject.AddComponent<Collectible>();
     }
 }

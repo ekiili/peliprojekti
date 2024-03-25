@@ -11,6 +11,7 @@ public class BoatPushPlayer : MonoBehaviour
         if (other.gameObject.GetComponent<Diver>() != null)
         {
             other.GetComponent<Diver>().PushPlayer(_pushForce * 3);
+            GameManager.Score -= 2;
         }
     }
 }

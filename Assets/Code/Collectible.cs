@@ -18,13 +18,16 @@ public class Collectible : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Collector>() != null)
         {
-            other.gameObject.GetComponent<Collector>().CollectedTrash(_trashType, _value);
-            Die();
+            bool collected = other.gameObject.GetComponent<Collector>().CollectedTrash(_trashType, _value);
+            if (collected)
+            {
+                Die();
+            }
         }
     }
 
     public void Die()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

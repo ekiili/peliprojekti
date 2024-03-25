@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 2655676532153516847}
   - component: {fileID: 8535482084555832739}
   - component: {fileID: -3964026555821705974}
+  - component: {fileID: -180323868373102513}
+  - component: {fileID: 8711961482484970661}
   m_Layer: 0
   m_Name: Fish (Evil) (Tier 1)
-  m_TagString: Untagged
+  m_TagString: DeadFish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,3 +184,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62db391dc670645489e2e4e0a3f8567e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-180323868373102513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032997542310611467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf22faa147a7274c8d0313992c50b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1
+  _invincibilityTime: 2
+  _flashingInterval: 0.05
+--- !u!114 &8711961482484970661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032997542310611467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5244ed912eb5144fb7a270cf5405104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashType: 2
+  _value: 1
