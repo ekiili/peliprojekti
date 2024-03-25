@@ -393,12 +393,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b109e8761211ad843a90a7890682f2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Boat: {fileID: 5990726530774577647, guid: 4de8c793e319fb547a40f55730c62d5e, type: 3}
+  _boat: {fileID: 0}
   SpawnLeft: {fileID: 1760418622}
   SpawnRight: {fileID: 1104598433}
-  RandowmSpawnTimeMin: 3
-  RandowmSpawnTimeMax: 7
-  NextSpawnTime: 3
+  _minTimeBetweenSpawns: 5
+  _maxTimeBetweenSpawns: 10
+  _timeBetweenDifficultyIncrease: 15
+  _difficultyIncrease: 0.1
+  _timeBetweenSpawns: 5
 --- !u!4 &992850822
 Transform:
   m_ObjectHideFlags: 0
@@ -603,7 +605,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _timeBetweenSpawns: 2
+  _timeBetweenDifficultyIncrease: 15
+  _difficultyIncrease: 0.1
   _arenaHeight: 6
+  _topOffset: 1
+  _bottomOffset: 1
+  _arenaWidth: 10.7
   _side: 0
 --- !u!212 &1143155015
 SpriteRenderer:
@@ -704,7 +711,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _timeBetweenSpawns: 2
+  _timeBetweenDifficultyIncrease: 15
+  _difficultyIncrease: 0.1
   _arenaHeight: 6
+  _topOffset: 1
+  _bottomOffset: 1
+  _arenaWidth: 10.7
   _side: 1
 --- !u!212 &1308496048
 SpriteRenderer:
