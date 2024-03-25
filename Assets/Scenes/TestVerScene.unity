@@ -159,8 +159,8 @@ Camera:
   m_GameObject: {fileID: 249481036}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _timeBetweenSpawns: 2
   _arenaHeight: 8
-  _side: 1
+  _side: 0
 --- !u!212 &1143155015
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -600,7 +600,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!4 &1143155016
 Transform:
@@ -650,7 +650,7 @@ MonoBehaviour:
   _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
   _timeBetweenSpawns: 2
   _arenaHeight: 8
-  _side: 0
+  _side: 1
 --- !u!212 &1308496048
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -701,7 +701,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!4 &1308496049
 Transform:
@@ -853,11 +853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 609313590198840157, guid: a18a20eda263757499005fba743df584, type: 3}
       propertyPath: m_Name
-      value: Square
-      objectReference: {fileID: 0}
-    - target: {fileID: 6957073323938811055, guid: a18a20eda263757499005fba743df584, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 14.2
+      value: GameArea
       objectReference: {fileID: 0}
     - target: {fileID: 6957073323938811055, guid: a18a20eda263757499005fba743df584, type: 3}
       propertyPath: m_LocalPosition.x
