@@ -59,7 +59,7 @@ public class FishSpawner : MonoBehaviour
             _spawningTimer = 0f;
         }
 
-        if (_difficultyTimer > _timeBetweenDifficultyIncrease) {
+        if (_difficultyTimer > _currentDifficulty) {
             _currentDifficulty += _difficultyIncrease;
             _difficultyTimer = 0f;
         }
@@ -75,6 +75,7 @@ public class FishSpawner : MonoBehaviour
             transform.position = new Vector2(_arenaWidth / 2 + 1, UnityEngine.Random.Range(_topY, _bottomY));
             Projectile _newFish = Instantiate(_fish, transform.position, quaternion.identity);
             _newFish.Fire(transform.position + (Vector3) Vector2.left);
+            // _newFish.GetComponent<SpriteRenderer>().flipY = true;
         }
 
     }

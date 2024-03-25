@@ -22,7 +22,7 @@ public class Boat : MonoBehaviour
         if (TimeToKill <= 0)
         {
             Destroy(gameObject);
-            BoatSpawner.BoatAlive = false;
+            BoatSpawner._liveBoat = false;
         }
     }
 
