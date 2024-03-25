@@ -10,6 +10,7 @@ public class Damage : MonoBehaviour
         if (other.gameObject.GetComponent<Health>() != null)
         {
             other.gameObject.GetComponent<Health>().TakeDamage(_damage);
+            GameManager.Score -= 2;
         }
     }
 }

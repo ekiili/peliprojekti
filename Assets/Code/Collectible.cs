@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
     public enum TrashType {
         metal,
-        plastic
+        plastic,
+        deadFish
     }
     [Header ("Attributes")]
     [SerializeField] private TrashType _trashType = TrashType.metal;
