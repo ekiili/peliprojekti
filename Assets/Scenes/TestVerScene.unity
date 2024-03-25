@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diver
       objectReference: {fileID: 0}
+    - target: {fileID: 819806771962139710, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1438817797755880726, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: m_MaskInteraction
       value: 1
