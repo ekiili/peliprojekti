@@ -213,3 +213,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashType: 2
   _value: 1
+  _col: 1
