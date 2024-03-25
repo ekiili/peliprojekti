@@ -5,17 +5,24 @@ using UnityEngine;
 
 public class BoatSpawner : MonoBehaviour
 {
-    [SerializeField] private Boat _Boat;
-    [SerializeField] private GameObject SpawnLeft;
-    [SerializeField] private GameObject SpawnRight;
-    [SerializeField] private float RandowmSpawnTimeMin = 5f;
-    [SerializeField] private float RandowmSpawnTimeMax = 10f;
 
-    private SpawnPoint _SpawnPoint;
-    public static bool BoatAlive = false;
-    private float TimeFromLastSpawn = 0;
+    [SerializeField] private Boat _boat;
+    [SerializeField] private GameObject SpawnLeft;  // pois
+    [SerializeField] private GameObject SpawnRight; // pois
+    [SerializeField] private float _minTimeBetweenSpawns = 5f;
+    [SerializeField] private float _maxTimeBetweenSpawns = 10f;
+    [Tooltip("Time between spawning frequency increases. \nDefault: 15sec")]
+    [SerializeField] public float _timeBetweenDifficultyIncrease = 15f;
+    [Tooltip("Time the time between spawns is decreased by every time the difficulty rises. \nDefault: 0.1sec")]
+    [SerializeField] public float _difficultyIncrease = 0.1f;
+
+    private SpawnPoint _activeSpawnPoint;
+    public static bool _liveBoat = false;
+    private float _spawningTimer = 0f;
+    private float _difficultyTimer = 0f;
+    private float _currentDifficulty = 0f;
     [Tooltip("Used to set time for first spawn.")]
-    [SerializeField] private float NextSpawnTime = 5;
+    [SerializeField] private float _timeBetweenSpawns = 5;
 
     private enum SpawnPoint
     {
@@ -26,36 +33,44 @@ public class BoatSpawner : MonoBehaviour
 
     float GetRandomTime()
     {
-        return UnityEngine.Random.Range((int)RandowmSpawnTimeMin, (int)RandowmSpawnTimeMax);
+        return UnityEngine.Random.Range((int) _maxTimeBetweenSpawns, (int) _minTimeBetweenSpawns);
     }
 
     void SpawnBoat()
     {
-        BoatAlive = true;
-        if (_SpawnPoint == SpawnPoint.Left)
+        _liveBoat = true;
+
+        if (_activeSpawnPoint == SpawnPoint.Left)
         {
-            Boat newBoat = Instantiate(_Boat, SpawnLeft.transform.position, Quaternion.identity);
-            newBoat.LaunchBoat(Vector2.right);
+            Boat _newBoat = Instantiate(_boat, SpawnLeft.transform.position, Quaternion.identity);
+            _newBoat.LaunchBoat(Vector2.right);
         }
         else
         {
-            Boat newBoat = Instantiate(_Boat, SpawnRight.transform.position, Quaternion.identity);
-            newBoat.LaunchBoat(Vector2.left);
+            Boat _newBoat = Instantiate(_boat, SpawnRight.transform.position, Quaternion.identity);
+            _newBoat.LaunchBoat(Vector2.left);
         }
-        NextSpawnTime = GetRandomTime();
+        _timeBetweenSpawns = GetRandomTime() - _currentDifficulty;
+
+        if (_difficultyTimer > _currentDifficulty) {
+            _currentDifficulty += _difficultyIncrease;
+            _difficultyTimer = 0f;
+        }
 
     }
 
     void FixedUpdate()
     {
-        if (!BoatAlive)
+        if (!_liveBoat)
         {
-            TimeFromLastSpawn += Time.fixedDeltaTime;
-            if (TimeFromLastSpawn >= NextSpawnTime)
+            _spawningTimer += Time.fixedDeltaTime;
+            _difficultyTimer += Time.deltaTime;
+            
+            if (_spawningTimer >= _timeBetweenSpawns)
             {
-                _SpawnPoint = (SpawnPoint)UnityEngine.Random.Range(0, 2);
+                _activeSpawnPoint = (SpawnPoint) UnityEngine.Random.Range(0, 2);
                 SpawnBoat();
-                TimeFromLastSpawn = 0;
+                _spawningTimer = 0;
             }
         }
     }
