@@ -10,6 +10,7 @@ public class SandManager : MonoBehaviour
     public float _trashLevel = 0f;          // For keeping count of lost trash
     public float _sandHeight = 0f;
     private Collider2D _collider = null;
+    private Damage _damage = null;
     [Header("Components")]
     [Tooltip("This is the gameobject that defines where the sand starts")]
     [SerializeField] private GameObject _normalSand = null;
@@ -24,6 +25,7 @@ public class SandManager : MonoBehaviour
     void Awake() {
         _collector = GetComponent<Collector>();
         _collider = GetComponent<Collider2D>();
+        _damage = GetComponent<Damage>();
 
         if (_evilSand == null || _normalSand == null) {
             throw new System.Exception("Missing one or both sand types!");
