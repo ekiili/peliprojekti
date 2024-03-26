@@ -18,7 +18,7 @@ public class BackgroundMover : MonoBehaviour
     }
 
     void FixedUpdate() {
-        transform.position = new Vector2(
+        transform.localPosition = new Vector2(
             -_player.transform.position.x * _horizontalSensitivity + _horizontalOffset,
             -_player.transform.position.y * _verticalSensitivity + _verticalOffset
         );
