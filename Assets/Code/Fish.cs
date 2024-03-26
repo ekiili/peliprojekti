@@ -32,7 +32,7 @@ public class Fish : MonoBehaviour
     {
         _rb.velocity = Vector2.zero;
         _rb.gravityScale = 0.01f;
-        _sr.flipX = true;
+        _sr.flipY = true;
         transform.gameObject.tag = "DeadFish";
         _cl._col = true;
     }
