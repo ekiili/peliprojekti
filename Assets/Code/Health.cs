@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public float _health = 3f;
+    [SerializeField] public int _health = 3;
     [SerializeField] public float _invincibilityTime = 2f;
     [SerializeField] public float _flashingInterval = 0.05f;
-    
+    [SerializeField] private GameObject _healtIdicator;
+
     SpriteRenderer _spriteRenderer;
     private bool _isVisible = true;
     private bool _isInvincible = false;
@@ -43,23 +45,25 @@ public class Health : MonoBehaviour
             }
         }
     }
-    public void TakeDamage(float _damage)
+    public void TakeDamage(int _damage)
     {
-        if (_health <= 0)
-        {
-            gameObject.GetComponent<Diver>().Die();
-        }
-
         if(!_isInvincible)
         {
             _health -= _damage;
-            Debug.Log("Player took" + _damage  + "damage");
+            Debug.Log("Player took " + _damage  + " damage");
+            if(gameObject.CompareTag("Player"))
+            {
+                _healtIdicator.GetComponent<PlayerHealth>().TakeDamage(_damage);
+            }
             _isInvincible = true;
             Debug.Log("Player is invincible");
         }
-        
+        if (_health == 0)
+        {
+            gameObject.GetComponent<Diver>().Die();
+        }
     }
-    public void Heal(float heal)
+    public void Heal(int heal)
     {
         _health += heal;
     }

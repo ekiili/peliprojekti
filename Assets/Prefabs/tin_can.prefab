@@ -127,7 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashType: 0
-  _value: 1
+  _value: 5
+  _col: 1
 --- !u!58 &-7708200093886985756
 CircleCollider2D:
   m_ObjectHideFlags: 0

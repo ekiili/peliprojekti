@@ -9,12 +9,14 @@ public class Diver : MonoBehaviour
     [Header ("Components")]
     [SerializeField] private ActionMap _inputs = null;
     [SerializeField] private Rigidbody2D _rb = null;
+    [SerializeField] private GameObject _joystick;
 
     [Header ("Internals")]
     [SerializeField] private Vector2 _movementInput = Vector2.zero;
 
     [Header ("Attributes")]
     [SerializeField] public float _swimSpeed = 1f;
+
 
     private void Awake()
     {
@@ -54,6 +56,7 @@ public class Diver : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player has died");
+        _joystick.SetActive(false);
         gameObject.SetActive(false);
     }
 }
