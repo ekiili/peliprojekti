@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1845994789, guid: dd0b890e2c4acb2468750a02f00c174d, type: 3}
-  m_Color: {r: 0.47274056, g: 0.754717, b: 0.19579923, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   _health: 1
   _invincibilityTime: 2
   _flashingInterval: 0.05
+  _healtIdicator: {fileID: 0}
 --- !u!114 &8711961482484970661
 MonoBehaviour:
   m_ObjectHideFlags: 0

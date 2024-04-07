@@ -180,9 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'baltic
-
-    blue'
+  m_text: "titteli \nt\xE4h\xE4n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -316,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: options
+  m_text: asetukset
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -822,7 +820,6 @@ GameObject:
   - component: {fileID: 746208602}
   - component: {fileID: 746208601}
   - component: {fileID: 746208600}
-  - component: {fileID: 746208603}
   m_Layer: 0
   m_Name: Fin
   m_TagString: Untagged
@@ -892,19 +889,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746208601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 746208603}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &746208601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,7 +910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -627497072, guid: f64e6083afeacdb42bff635e1eedaac2, type: 3}
+  m_Sprite: {fileID: -1093147643, guid: f64e6083afeacdb42bff635e1eedaac2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -943,19 +928,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746208598}
   m_CullTransparentMesh: 1
---- !u!114 &746208603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746208598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1542c266a27711488efb2db12218e61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scene: {fileID: 102900000, guid: c1fd16fe519cf814cbafb4da9d647f8d, type: 3}
 --- !u!1 &841675328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1480,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1426770499}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1426770501}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1426770499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,7 +1513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1353749086, guid: f64e6083afeacdb42bff635e1eedaac2, type: 3}
+  m_Sprite: {fileID: -669920195, guid: f64e6083afeacdb42bff635e1eedaac2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1556,9 +1540,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1426770496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c861527174823d7488985499b9d9b6e2, type: 3}
+  m_Script: {fileID: 11500000, guid: c1542c266a27711488efb2db12218e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scene: {fileID: 102900000, guid: 425824fa9577b47459475b96b5fdaaa7, type: 3}
 --- !u!1 &1521048118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1817,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1792612077326531563, guid: a5c6a5e7b54daed4daa2cb8dae0238a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.736
       objectReference: {fileID: 0}
     - target: {fileID: 2224610363998444845, guid: a5c6a5e7b54daed4daa2cb8dae0238a9, type: 3}
       propertyPath: m_Size.x

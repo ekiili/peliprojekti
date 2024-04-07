@@ -56,6 +56,22 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8507439092033950940, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -797094222, guid: c1cc9f6d1071da84b9264f947286e81f, type: 3}
+    - target: {fileID: 8507439092033950940, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507439092033950940, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507439092033950940, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9032997542310611467, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
       propertyPath: m_Name
       value: Fish (Evil) (Tier 1) Variant
