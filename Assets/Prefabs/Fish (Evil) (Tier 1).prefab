@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3964026555821705974}
   - component: {fileID: -180323868373102513}
   - component: {fileID: 8711961482484970661}
+  - component: {fileID: 4016069502573104851}
   m_Layer: 0
   m_Name: Fish (Evil) (Tier 1)
   m_TagString: DeadFish
@@ -215,3 +216,24 @@ MonoBehaviour:
   _trashType: 2
   _value: 1
   _col: 1
+--- !u!95 &4016069502573104851
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032997542310611467}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d90e057b3dfe8c42921116642ab6d43, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
