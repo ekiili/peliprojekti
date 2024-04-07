@@ -14,6 +14,9 @@ public class Boat : MonoBehaviour
     }
     public void LaunchBoat(Vector2 direction)
     {
+        if (direction.x < 0) {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
         _rb.AddForce(direction * BoatSpeed, ForceMode2D.Impulse);
     }
     void FixedUpdate()

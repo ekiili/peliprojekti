@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8797732277291240146}
   - component: {fileID: 5244280374923646935}
   - component: {fileID: 1109734725812124832}
-  - component: {fileID: 6797292428815729333}
+  - component: {fileID: 1168080756626863486}
   m_Layer: 0
   m_Name: Boat(PlaceHolder)
   m_TagString: Untagged
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pushForce: 1
---- !u!95 &6797292428815729333
+--- !u!95 &1168080756626863486
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ Animator:
   m_GameObject: {fileID: 6777809596593045497}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0712c3c30f12f704da0ce0d78cf61376, type: 2}
+  m_Controller: {fileID: 9100000, guid: 266dd6a1dbd63d247a834e3944bf65bf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
