@@ -11,9 +11,14 @@ public class PlayerTouchMovement : MonoBehaviour
     [SerializeField] private FloatingJoystick Joystick;
     [SerializeField] private Rigidbody2D _rb = null;
     [SerializeField] private float _speed = 1f;
+    [SerializeField] private Animator _animator = null;
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
+
+    void OnAwake() {
+        _animator = GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {
@@ -79,7 +84,10 @@ public class PlayerTouchMovement : MonoBehaviour
         _rb.AddForce(scaledMovement * 0.01f);
         if (scaledMovement != Vector3.zero)
         {
+            _animator.Play("DiverSwim");
             transform.rotation = Quaternion.LookRotation(Vector3.forward, scaledMovement);
+        } else {
+            _animator.Play("DiverIdle");
         }
     }
 }

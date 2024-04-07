@@ -36,17 +36,22 @@ public class Diver : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Shortening player input movement values
-        _movementInput = _inputs.Diver.Move.ReadValue<Vector2>();
+        // // Shortening player input movement values
+        // _movementInput = _inputs.Diver.Move.ReadValue<Vector2>();
 
-        // Moves the diver in the direction of input
-        _rb.AddForce(_movementInput * _swimSpeed, ForceMode2D.Force);
+        // // Moves the diver in the direction of input
+        // //_rb.AddForce(_movementInput * _swimSpeed, ForceMode2D.Force);
 
-        // If moving, rotate diver in the direction of input
-        if (_movementInput != Vector2.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, _movementInput);
-        }
+        // // If moving, rotate diver in the direction of input
+        // if (_movementInput != Vector2.zero)
+        // {
+        //     Debug.Log("m");
+        //     _animator.Play("DiverSwim");
+        //     transform.rotation = Quaternion.LookRotation(Vector3.forward, _movementInput);
+        // } else {
+        //     Debug.Log("nm");
+        //     //_animator.Play("DiverIdle");
+        // }
     }
     public void PushPlayer(float _pushForce)
     {
