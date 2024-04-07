@@ -454,8 +454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ef092fc5b8bd849bc1b918dae52e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _verticalSensitivity: 1
-  _horizontalSensitivity: 2
+  _verticalSensitivity: 0
+  _horizontalSensitivity: 0.5
   _verticalOffset: 1
   _horizontalOffset: 0
 --- !u!212 &841675330
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff243dbcac0412942baa4d0c77cef658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fish: {fileID: 8535482084555832739, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
+  _fish: {fileID: 6081477651344639315, guid: f213859323a53a0458b692e3553fcdc4, type: 3}
   _timeBetweenSpawns: 3
   _timeBetweenDifficultyIncrease: 15
   _difficultyIncrease: 0.1
