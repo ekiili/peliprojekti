@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5146581376071054859}
   - component: {fileID: 2494343059163290067}
   m_Layer: 0
-  m_Name: tin_can
+  m_Name: trash
   m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
