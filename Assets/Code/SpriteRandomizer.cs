@@ -10,8 +10,4 @@ public class SpriteRandomizer : MonoBehaviour
         int _index = UnityEngine.Random.Range(0, _possibleSprites.Length);
         GetComponent<SpriteRenderer>().sprite = _possibleSprites[_index];
     }
-
-    void FixedUpdate() {
-        Debug.Log(UnityEngine.Random.Range(0, _possibleSprites.Length));
-    }
 }

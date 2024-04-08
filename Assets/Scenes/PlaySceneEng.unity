@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &91655321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2326208600250532314, guid: a5c6a5e7b54daed4daa2cb8dae0238a9, type: 3}
+  m_PrefabInstance: {fileID: 1648436233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &191328517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4366969659495569714, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
@@ -5533,6 +5538,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1920914064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845675194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845675196}
+  - component: {fileID: 845675195}
+  m_Layer: 0
+  m_Name: DayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &845675195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845675194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793ca97719c7904448988955f3ccaa65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boatSpawner: {fileID: 992850820}
+  _leftFishSpawner: {fileID: 1308496046}
+  _rightFishSpawner: {fileID: 1143155013}
+  _sandManager: {fileID: 91655321}
+  _player: {fileID: 1751200253}
+  _dayCount: 0
+  _boatFrequencyIncrease: 0.5
+  _maxSandHeight: 3.5
+  _playerHealth: 0
+  _playerScore: 0
+  _playerTrashCount: 0
+--- !u!4 &845675196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845675194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &848171063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6035,7 +6095,7 @@ GameObject:
   - component: {fileID: 1143155015}
   - component: {fileID: 1143155014}
   m_Layer: 0
-  m_Name: fish (1)
+  m_Name: RightFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6364,7 +6424,7 @@ GameObject:
   - component: {fileID: 1308496048}
   - component: {fileID: 1308496047}
   m_Layer: 0
-  m_Name: fish
+  m_Name: LeftFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7346,3 +7406,4 @@ SceneRoots:
   - {fileID: 992850822}
   - {fileID: 1308496049}
   - {fileID: 1143155016}
+  - {fileID: 845675196}
