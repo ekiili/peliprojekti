@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int _health = 3;
+    [SerializeField] public int _health = 3;
     [SerializeField] private GameObject _health1;
     [SerializeField] private GameObject _health2;
     [SerializeField] private GameObject _health3;
@@ -29,8 +29,8 @@ public class PlayerHealth : MonoBehaviour
             _health1.SetActive(false);
             _health2.SetActive(false);
             _health3.SetActive(false);
-            Time.timeScale = 0;
             _gameOverScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
     public void TakeDamage(int damage)
