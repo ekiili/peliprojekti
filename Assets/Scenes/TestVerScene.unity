@@ -6659,10 +6659,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1616881043310159193, guid: a5c6a5e7b54daed4daa2cb8dae0238a9, type: 3}
-      propertyPath: _risingMultiplier
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 2326208600250532314, guid: a5c6a5e7b54daed4daa2cb8dae0238a9, type: 3}
       propertyPath: m_Name
       value: SandManager

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6956518085998084506}
   - component: {fileID: 4711264129106267078}
   - component: {fileID: 536514477376330362}
+  - component: {fileID: 3010039688201927219}
   m_Layer: 0
   m_Name: Trash (Metal) (Tier 1)
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashType: 0
   _value: 1
+  _col: 1
 --- !u!114 &536514477376330362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +186,22 @@ MonoBehaviour:
   _waves: 0
   _waveLength: 0.5
   _waveSpeed: 1
+--- !u!114 &3010039688201927219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055687713170575857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c5cd3431bf89046ad748cf77b14a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _possibleSprites:
+  - {fileID: 21300000, guid: 89d63d14f24ba694b8104ed3d7874b46, type: 3}
+  - {fileID: 21300000, guid: 22d9feb1a736fa6449e868bbb26ec3c8, type: 3}
+  - {fileID: 21300000, guid: d1bf2305a6f7c094abbd10f33a16719c, type: 3}
+  - {fileID: 21300000, guid: 2a3bebb959ac64846a055fcbab4cbb04, type: 3}
+  - {fileID: 21300000, guid: 81900cc012e76144680f5c2746b3a650, type: 3}
+  - {fileID: 21300000, guid: 0f6ded3cfcf04a149aa610f716c79732, type: 3}

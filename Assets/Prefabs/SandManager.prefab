@@ -153,7 +153,7 @@ MonoBehaviour:
   _sandHeight: 0
   _normalSand: {fileID: 344319891802587826}
   _evilSand: {fileID: 3238091610967281170}
-  _risingMultiplier: 0.1
+  _risingMultiplier: 0.05
 --- !u!61 &4294057839093481988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.28627452, g: 0.054901965, b: 0, a: 1}
+  m_Color: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
