@@ -81,7 +81,7 @@ public class PlayerTouchMovement : MonoBehaviour
     private void Update()
     {
         Vector3 scaledMovement = _speed * Time.deltaTime * new Vector3(MovementAmount.x, MovementAmount.y, 0);
-        _rb.AddForce(scaledMovement * 0.01f);
+        _rb.AddForce(scaledMovement * 0.001f);
         if (scaledMovement != Vector3.zero)
         {
             _animator.Play("DiverSwim");
