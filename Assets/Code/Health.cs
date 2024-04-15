@@ -60,7 +60,10 @@ public class Health : MonoBehaviour
         }
         if (_health == 0)
         {
-            gameObject.GetComponent<Diver>().Die();
+            if (gameObject.CompareTag("Player"))
+            {
+                gameObject.GetComponent<Diver>().Die();
+            }
         }
     }
     public void Heal(int heal)
