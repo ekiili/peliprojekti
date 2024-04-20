@@ -665,7 +665,7 @@ RectTransform:
   m_GameObject: {fileID: 359296543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 931567356}
@@ -2093,7 +2093,7 @@ GameObject:
   - component: {fileID: 1957575452}
   - component: {fileID: 1957575456}
   - component: {fileID: 1957575455}
-  - component: {fileID: 1957575454}
+  - component: {fileID: 1957575457}
   - component: {fileID: 1957575453}
   m_Layer: 5
   m_Name: OptionsButton
@@ -2111,7 +2111,7 @@ RectTransform:
   m_GameObject: {fileID: 1957575451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 931567356}
@@ -2151,20 +2151,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1957575454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957575451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62442793f8faa384a956dbf443992278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _optionsCanvas: {fileID: 1534657192}
-  _optionsVisible: 0
 --- !u!114 &1957575455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2209,9 +2195,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957575454}
-        m_TargetAssemblyTypeName: MainMenuOptionsScript, Assembly-CSharp
-        m_MethodName: CallOptions
+      - m_Target: {fileID: 1957575457}
+        m_TargetAssemblyTypeName: PopUpEnabler, Assembly-CSharp
+        m_MethodName: CallPopUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2229,6 +2215,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957575451}
   m_CullTransparentMesh: 1
+--- !u!114 &1957575457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957575451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62442793f8faa384a956dbf443992278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 1534657192}
+  _canvasVisible: 0
 --- !u!1 &2012587887
 GameObject:
   m_ObjectHideFlags: 0
