@@ -8,6 +8,8 @@ TagManager:
   - Sand
   - Trash
   - DeadFish
+  - MusicMan
+  - MusicMute
   layers:
   - Default
   - TransparentFX
