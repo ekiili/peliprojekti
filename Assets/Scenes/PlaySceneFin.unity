@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1542c266a27711488efb2db12218e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: MainMenuEng
+  _scene: MainMenuFin
 --- !u!114 &520182020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6866,7 +6866,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 938287418}
   m_OnClick:
     m_PersistentCalls:
@@ -10284,7 +10284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1542c266a27711488efb2db12218e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: MainMenuEng
+  _scene: MainMenuFin
 --- !u!82 &2080063495
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10489,9 +10489,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 906266300, guid: 294a261b725a01248acf538a37949931, type: 3}
-    m_PressedSprite: {fileID: -507636239, guid: 294a261b725a01248acf538a37949931, type: 3}
+    m_PressedSprite: {fileID: -532648140, guid: 294a261b725a01248acf538a37949931, type: 3}
     m_SelectedSprite: {fileID: 906266300, guid: 294a261b725a01248acf538a37949931, type: 3}
-    m_DisabledSprite: {fileID: -507636239, guid: 294a261b725a01248acf538a37949931, type: 3}
+    m_DisabledSprite: {fileID: -532648140, guid: 294a261b725a01248acf538a37949931, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted

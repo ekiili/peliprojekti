@@ -890,7 +890,7 @@ MonoBehaviour:
         m_MethodName: EnableTarget
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1410608066}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6727,11 +6727,15 @@ PrefabInstance:
     - target: {fileID: 4788796209127215759, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1410608066}
     - target: {fileID: 5560971341009876449, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 1764806772}
+    - target: {fileID: 5959174958647568911, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5997309999160057425, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 100
@@ -8094,7 +8098,7 @@ MonoBehaviour:
         m_MethodName: EnableTarget
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1410608066}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10319,7 +10323,7 @@ MonoBehaviour:
         m_MethodName: EnableTarget
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1410608066}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10636,7 +10640,7 @@ MonoBehaviour:
         m_MethodName: EnableTarget
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1410608066}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10901,11 +10905,11 @@ SceneRoots:
   - {fileID: 1648436233}
   - {fileID: 1920914064}
   - {fileID: 1126032432}
+  - {fileID: 1410608065}
   - {fileID: 992850822}
   - {fileID: 1308496049}
   - {fileID: 1143155016}
   - {fileID: 1764806773}
   - {fileID: 37021764}
   - {fileID: 996454286}
-  - {fileID: 1410608065}
   - {fileID: 1456532547}
