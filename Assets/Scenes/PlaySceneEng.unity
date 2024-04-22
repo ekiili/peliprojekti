@@ -6175,6 +6175,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 899985948475447365, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004777186941759950, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 4366969659495569714, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_Name
       value: Ui
@@ -6187,6 +6195,14 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 1764806772}
+    - target: {fileID: 5997309999160057425, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162606590703664935, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 7325746238237077293, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_Camera
       value: 
