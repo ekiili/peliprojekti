@@ -25,6 +25,7 @@ public class BoatTrashSpawner : MonoBehaviour
         {
             SpawnTrash();
             _TimeFromLastSpawn = 0;
+            GetComponent<PlayClip>().PlayAudioSecondClip();
         }
     }
 }

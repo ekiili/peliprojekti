@@ -39,6 +39,7 @@ public class BoatSpawner : MonoBehaviour
     void SpawnBoat()
     {
         _liveBoat = true;
+        GetComponent<PlayClip>().PlayAudioClip();
 
         if (_activeSpawnPoint == SpawnPoint.Left)
         {

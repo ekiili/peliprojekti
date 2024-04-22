@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3964026555821705974}
   - component: {fileID: -180323868373102513}
   - component: {fileID: 4016069502573104851}
+  - component: {fileID: -8420552985213915354}
   m_Layer: 0
   m_Name: salmon
   m_TagString: DeadFish
@@ -223,3 +224,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8420552985213915354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032997542310611467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129b01b282998e429eecc8594ea7e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: aa49db00de8b78a44b60afd099e1de23, type: 3}

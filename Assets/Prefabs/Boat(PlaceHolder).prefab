@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5244280374923646935}
   - component: {fileID: 1109734725812124832}
   - component: {fileID: 1168080756626863486}
+  - component: {fileID: 3905428341272265237}
   m_Layer: 0
   m_Name: Boat(PlaceHolder)
   m_TagString: Untagged
@@ -240,3 +241,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3905428341272265237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777809596593045497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129b01b282998e429eecc8594ea7e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 45fe66e8da28f9741a820fc19d7cfbeb, type: 3}
