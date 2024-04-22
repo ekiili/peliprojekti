@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b127240196e403845b9562bf7cfa35ac
+guid: 4ed3d2e45c0b0274fa34384776775954
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,133 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: gamemode_buttons_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 34
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: decb7ebe9bf77f64c94cb2975c2b5815
-      internalID: 1355541817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamemode_buttons_1
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 32
-        width: 34
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95e3f7eee0d986e4890a8b917d2dd1ae
-      internalID: -669528324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamemode_buttons_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 58
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a5eb7e1a52fa444f9e6f83c971bfa7b
-      internalID: -1593845968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamemode_buttons_3
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 16
-        width: 58
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13088b601f1889546bfa80abcd2a6006
-      internalID: 593601278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamemode_buttons_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 42
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b932b332089803b45aeb76ef5b143f86
-      internalID: -381894069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gamemode_buttons_5
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 0
-        width: 42
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59fef61623e2eee4d8d2c74dbb1ea314
-      internalID: 358405625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -258,13 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      gamemode_buttons_0: 1355541817
-      gamemode_buttons_1: -669528324
-      gamemode_buttons_2: -1593845968
-      gamemode_buttons_3: 593601278
-      gamemode_buttons_4: -381894069
-      gamemode_buttons_5: 358405625
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
