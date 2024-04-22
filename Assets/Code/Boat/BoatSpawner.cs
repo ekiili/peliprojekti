@@ -33,7 +33,7 @@ public class BoatSpawner : MonoBehaviour
 
     float GetRandomTime()
     {
-        return UnityEngine.Random.Range((int) _maxTimeBetweenSpawns, (int) _minTimeBetweenSpawns);
+        return UnityEngine.Random.Range((int) _maxTimeBetweenSpawns - - _currentDifficulty, (int) _minTimeBetweenSpawns);
     }
 
     void SpawnBoat()
@@ -51,7 +51,7 @@ public class BoatSpawner : MonoBehaviour
             Boat _newBoat = Instantiate(_boat, SpawnRight.transform.position, Quaternion.identity);
             _newBoat.LaunchBoat(Vector2.left);
         }
-        _timeBetweenSpawns = GetRandomTime() - _currentDifficulty;
+        _timeBetweenSpawns = GetRandomTime();
 
         if (_difficultyTimer > _currentDifficulty) {
             _currentDifficulty += _difficultyIncrease;
