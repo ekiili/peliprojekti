@@ -23,6 +23,7 @@ public class Collectible : MonoBehaviour
             bool collected = other.gameObject.GetComponent<Collector>().CollectedTrash(_trashType, _value);
             if (collected)
             {
+                GetComponent<PlayClip>().PlayAudioClip();
                 Die();
             }
         }
