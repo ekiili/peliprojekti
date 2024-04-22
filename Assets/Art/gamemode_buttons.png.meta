@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66c474120b60c2c40922bd0afb54b765
+guid: b127240196e403845b9562bf7cfa35ac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92137f4c154c0044d826e803ae4b68d5
-      internalID: 1006381135
+      spriteID: decb7ebe9bf77f64c94cb2975c2b5815
+      internalID: 1355541817
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aa56658c7e9ee645af6d9ad958728b0
-      internalID: 1035316244
+      spriteID: 95e3f7eee0d986e4890a8b917d2dd1ae
+      internalID: -669528324
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c67bfba4a114ea4c8232e2e0d4452af
-      internalID: -973194151
+      spriteID: 0a5eb7e1a52fa444f9e6f83c971bfa7b
+      internalID: -1593845968
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a508d3d17db99642a79ceebc7ef2861
-      internalID: 581556572
+      spriteID: 13088b601f1889546bfa80abcd2a6006
+      internalID: 593601278
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gamemode_buttons_0: 1006381135
-      gamemode_buttons_1: 1035316244
-      gamemode_buttons_2: -973194151
-      gamemode_buttons_3: 581556572
+      gamemode_buttons_0: 1355541817
+      gamemode_buttons_1: -669528324
+      gamemode_buttons_2: -1593845968
+      gamemode_buttons_3: 593601278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
