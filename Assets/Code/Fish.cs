@@ -43,6 +43,7 @@ public class Fish : MonoBehaviour
         if (_flipSprite) {
             _dead.GetComponent<SpriteRenderer>().flipY = true;
         }
+        GetComponent<PlayClip>().PlayAudioClip();
         Destroy(this.gameObject);
     }
 }

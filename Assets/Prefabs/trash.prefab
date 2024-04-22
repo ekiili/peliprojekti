@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5561827550786435723}
   - component: {fileID: 5146581376071054859}
   - component: {fileID: 2494343059163290067}
+  - component: {fileID: -2957746086570224202}
   m_Layer: 0
   m_Name: trash
   m_TagString: Trash
@@ -4983,3 +4984,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 1
+--- !u!114 &-2957746086570224202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431273540230910791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129b01b282998e429eecc8594ea7e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: 7413043387f414740978f07f83eb0f4e, type: 3}
+  _clip2: {fileID: 0}
