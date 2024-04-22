@@ -8,10 +8,14 @@ public class PlayClip : MonoBehaviour
     public AudioClip _clip2;
 
     public void PlayAudioClip() {
-        AudioSource.PlayClipAtPoint(_clip, transform.position);
+        if (GameObject.FindGameObjectWithTag("MusicMan").GetComponent<MusicManController>()._sfxPlaying) {
+            AudioSource.PlayClipAtPoint(_clip, transform.position);
+        }
     }
 
     public void PlayAudioSecondClip() {
-        AudioSource.PlayClipAtPoint(_clip2, transform.position);
+        if (GameObject.FindGameObjectWithTag("MusicMan").GetComponent<MusicManController>()._sfxPlaying) {
+            AudioSource.PlayClipAtPoint(_clip2, transform.position);
+        }
     }
 }
