@@ -23,7 +23,11 @@ public class Collectible : MonoBehaviour
             bool collected = other.gameObject.GetComponent<Collector>().CollectedTrash(_trashType, _value);
             if (collected)
             {
-                GetComponent<PlayClip>().PlayAudioClip();
+                try {
+                    GetComponent<PlayClip>().PlayAudioClip();
+                } catch {
+                    Debug.Log("No audio clip found");
+                }
                 Die();
             }
         }

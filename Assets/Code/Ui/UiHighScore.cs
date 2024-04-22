@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UiScore : MonoBehaviour
-
+public class UiHighScore : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
 
     private void Awake()
     {
-        GameManager.Score = 0;
         if (_scoreText == null)
         {
             _scoreText = GetComponent<TextMeshProUGUI>();

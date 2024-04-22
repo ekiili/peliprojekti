@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoatSpeed: 2
-  TimeToKill: 20
+  TimeToKill: 9
 --- !u!50 &-2942944757846906237
 Rigidbody2D:
   serializedVersion: 4

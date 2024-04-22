@@ -22,6 +22,7 @@ public class Diver : MonoBehaviour
     {
         _inputs = new ActionMap();
         _rb = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1;
     }
 
     private void OnEnable()

@@ -10,6 +10,7 @@ TagManager:
   - DeadFish
   - MusicMan
   - MusicMute
+  - EvilSand
   layers:
   - Default
   - TransparentFX

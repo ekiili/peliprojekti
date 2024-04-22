@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5274601699309718055}
   - component: {fileID: 8244761676509210441}
-  - component: {fileID: 4234717364463197772}
   - component: {fileID: 106581558064854933}
   m_Layer: 5
   m_Name: JoystickUi
@@ -62,29 +61,6 @@ Canvas:
   m_SortingLayerID: -303894051
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &4234717364463197772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2276786927223197763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 32
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &106581558064854933
 MonoBehaviour:
   m_ObjectHideFlags: 0
