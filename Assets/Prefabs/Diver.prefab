@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2331137079750349076}
   - component: {fileID: 3749698278576031269}
   - component: {fileID: 5930500716722594211}
-  - component: {fileID: 8260520729513141801}
   - component: {fileID: 3380548902435985802}
   m_Layer: 0
   m_Name: Diver
@@ -202,22 +201,6 @@ MonoBehaviour:
   _totalCount: 0
   _metalCount: 0
   _plasticCount: 0
---- !u!114 &8260520729513141801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334334947416081051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5949837a060ad40810cb01aa371b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JoystickSize: {x: 300, y: 300}
-  Joystick: {fileID: 0}
-  _rb: {fileID: 819806771962139710}
-  _speed: 1
 --- !u!114 &3380548902435985802
 MonoBehaviour:
   m_ObjectHideFlags: 0

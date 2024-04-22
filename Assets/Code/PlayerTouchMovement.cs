@@ -7,7 +7,7 @@ using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 public class PlayerTouchMovement : MonoBehaviour
 {
-    [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
+    // [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField] private FloatingJoystick Joystick;
     [SerializeField] private Rigidbody2D _rb = null;
     [SerializeField] private float _speed = 1f;
@@ -16,12 +16,16 @@ public class PlayerTouchMovement : MonoBehaviour
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
+    private Vector2 JoystickSize;
+
+
     void OnAwake() {
         _animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
+        JoystickSize = Joystick.GetComponent<RectTransform>().sizeDelta;
         EnhancedTouchSupport.Enable();
         ETouch.Touch.onFingerDown += FingerDown;
         ETouch.Touch.onFingerUp += FingerUp;
