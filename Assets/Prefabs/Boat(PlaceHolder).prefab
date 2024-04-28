@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1168080756626863486}
   - component: {fileID: 3905428341272265237}
   - component: {fileID: 2845160539394660695}
+  - component: {fileID: 3401896183694407249}
   m_Layer: 0
   m_Name: Boat(PlaceHolder)
   m_TagString: Untagged
@@ -352,3 +353,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3401896183694407249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777809596593045497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4491dc6e7ab23044ea98052aff59f064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

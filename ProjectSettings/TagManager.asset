@@ -11,6 +11,7 @@ TagManager:
   - MusicMan
   - MusicMute
   - EvilSand
+  - SfxMute
   layers:
   - Default
   - TransparentFX
