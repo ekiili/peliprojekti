@@ -13,6 +13,11 @@ public class SavesFin : MonoBehaviour
     {
         HighScore = GameManager.Score;
     }
+
+    void OnEnable() {
+        _scoreText.text = $"Parhaat Pisteet: {HighScore}";
+    }
+
     private void Awake()
     {
         if (_scoreText == null)

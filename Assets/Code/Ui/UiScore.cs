@@ -16,6 +16,11 @@ public class UiScore : MonoBehaviour
             _scoreText = GetComponent<TextMeshProUGUI>();
         }
     }
+
+    void OnEnable() {
+        _scoreText.text = $"Score: {GameManager.Score}";
+    }
+    
     void FixedUpdate()
     {
         _scoreText.text = $"Score: {GameManager.Score}";

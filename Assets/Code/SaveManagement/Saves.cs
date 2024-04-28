@@ -20,6 +20,10 @@ public class Saves : MonoBehaviour
             _scoreText = GetComponent<TextMeshProUGUI>();
         }
     }
+
+    void OnEnable() {
+        _scoreText.text = $"High Score: {HighScore}";
+    }
     void FixedUpdate()
     {
         _scoreText.text = $"High Score: {HighScore}";
