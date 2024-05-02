@@ -10,6 +10,7 @@ public class Diver : MonoBehaviour
     [SerializeField] private ActionMap _inputs = null;
     [SerializeField] private Rigidbody2D _rb = null;
     [SerializeField] private GameObject _joystick;
+    [SerializeField] private GameObject _gameEnder;
 
     [Header ("Internals")]
     [SerializeField] private Vector2 _movementInput = Vector2.zero;
@@ -62,7 +63,7 @@ public class Diver : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player has died");
-        _joystick.SetActive(false);
-        gameObject.SetActive(false);
+        _gameEnder.GetComponent<GameOverTrigger>().GameOver();
+        // gameObject.SetActive(false);
     }
 }

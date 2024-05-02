@@ -30,7 +30,6 @@ public class PlayerHealth : MonoBehaviour
             _health2.SetActive(false);
             _health3.SetActive(false);
             _gameOverScreen.SetActive(true);
-            Time.timeScale = 0;
         }
     }
     public void TakeDamage(int damage)

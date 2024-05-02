@@ -536,10 +536,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diver
       objectReference: {fileID: 0}
+    - target: {fileID: 494207678396096587, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: Joystick
+      value: 
+      objectReference: {fileID: 1410608067}
     - target: {fileID: 2331137079750349076, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 1410608066}
+    - target: {fileID: 2331137079750349076, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: _gameEnder
+      value: 
+      objectReference: {fileID: 1456532545}
     - target: {fileID: 3749698278576031269, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: _healtIdicator
       value: 
@@ -584,32 +592,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: Joystick
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 1751200263}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: JoystickSize.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: JoystickSize.y
-      value: 1000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 334334947416081051, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751200263}
-    - targetCorrespondingSourceObject: {fileID: 334334947416081051, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751200273}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
 --- !u!1 &520182016
 GameObject:
@@ -6719,6 +6705,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ui
       objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 358.57007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -911
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402683018024603684, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 442.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4788796209127215759, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
@@ -6738,6 +6752,34 @@ PrefabInstance:
     - target: {fileID: 6162606590703664935, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 358.57007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -911
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092941052558884490, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 507
       objectReference: {fileID: 0}
     - target: {fileID: 7325746238237077293, guid: a215f19b1e1634548a0f0972cba306c6, type: 3}
       propertyPath: m_Camera
@@ -8417,6 +8459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverPanel: {fileID: 37021759}
   _joystick: {fileID: 1410608066}
+  _gameOverScore: {fileID: 1434706028}
+  _gameOverHighScore: {fileID: 950577029}
 --- !u!4 &1456532547
 Transform:
   m_ObjectHideFlags: 0
@@ -9195,48 +9239,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 334334947416081051, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
   m_PrefabInstance: {fileID: 398615444}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1751200263
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751200253}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 594376207e71a2249917b9eeefdcb905, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!50 &1751200270 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 819806771962139710, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-  m_PrefabInstance: {fileID: 398615444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1751200273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751200253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5949837a060ad40810cb01aa371b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Joystick: {fileID: 1410608067}
-  _rb: {fileID: 1751200270}
-  _speed: 2
-  _animator: {fileID: 1751200263}
 --- !u!1 &1760418622
 GameObject:
   m_ObjectHideFlags: 0

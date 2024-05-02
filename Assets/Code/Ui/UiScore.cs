@@ -17,12 +17,12 @@ public class UiScore : MonoBehaviour
         }
     }
 
-    void OnEnable() {
+    public void UpdateText() {
         _scoreText.text = $"Score: {GameManager.Score}";
     }
     
     void FixedUpdate()
     {
-        _scoreText.text = $"Score: {GameManager.Score}";
+        UpdateText();
     }
 }

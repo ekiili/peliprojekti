@@ -11,7 +11,7 @@ public class Saves : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        HighScore = GameManager.Score;
+        HighScore = PlayerPrefs.GetInt("HighScore");
     }
     private void Awake()
     {
@@ -21,12 +21,12 @@ public class Saves : MonoBehaviour
         }
     }
 
-    void OnEnable() {
+    public void UpdateText() {
         _scoreText.text = $"High Score: {HighScore}";
     }
     void FixedUpdate()
     {
-        _scoreText.text = $"High Score: {HighScore}";
+        UpdateText();
     }
     void Start()
     {

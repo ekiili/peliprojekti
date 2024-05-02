@@ -25,9 +25,12 @@ public class SavesFin : MonoBehaviour
             _scoreText = GetComponent<TextMeshProUGUI>();
         }
     }
+    public void UpdateText() {
+        _scoreText.text = $"Parhaat Pisteet: {HighScore}";
+    }
     void FixedUpdate()
     {
-        _scoreText.text = $"Parhaat Pisteet: {HighScore}";
+        UpdateText();
     }
     void Start()
     {
