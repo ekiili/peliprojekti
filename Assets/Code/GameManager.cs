@@ -11,7 +11,7 @@ public static class GameManager
         get => _score;
         set
         {
-            _score = Mathf.Clamp(value, int.MinValue, int.MaxValue);
+            _score = Mathf.Clamp(value, 0, int.MaxValue);
 
             if (ScoreChanged != null)
             {
@@ -20,12 +20,7 @@ public static class GameManager
         }
     }
 
-    static GameManager()
-    {
-        Reset();
-    }
-
-    private static void Reset()
+    public static void Reset()
     {
         Score = 0;
     }

@@ -11,7 +11,7 @@ public class Saves : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        HighScore = PlayerPrefs.GetInt("HighScore");
+        HighScore = GameManager.Score;
     }
     private void Awake()
     {
@@ -32,13 +32,11 @@ public class Saves : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            Debug.Log("Game Started!");
             _highScore = PlayerPrefs.GetInt("HighScore");
-            Debug.Log("Score loaded: " + GameManager.Score);
         }
     }
 
-    public void SaveGame() {
+    public static void SaveGame() {
         HighScore = GameManager.Score;
     }
 

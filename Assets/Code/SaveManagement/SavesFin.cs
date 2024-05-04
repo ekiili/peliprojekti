@@ -13,11 +13,6 @@ public class SavesFin : MonoBehaviour
     {
         HighScore = GameManager.Score;
     }
-
-    void OnEnable() {
-        _scoreText.text = $"Parhaat Pisteet: {HighScore}";
-    }
-
     private void Awake()
     {
         if (_scoreText == null)
@@ -25,6 +20,7 @@ public class SavesFin : MonoBehaviour
             _scoreText = GetComponent<TextMeshProUGUI>();
         }
     }
+
     public void UpdateText() {
         _scoreText.text = $"Parhaat Pisteet: {HighScore}";
     }
@@ -36,13 +32,11 @@ public class SavesFin : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            Debug.Log("Game Started!");
             _highScore = PlayerPrefs.GetInt("HighScore");
-            Debug.Log("Score loaded: " + GameManager.Score);
         }
     }
 
-    public void SaveGame() {
+    public static void SaveGame() {
         HighScore = GameManager.Score;
     }
 

@@ -62,8 +62,9 @@ public class Diver : MonoBehaviour
     }
     public void Die()
     {
+        Saves.SaveGame();
         Debug.Log("Player has died");
         _gameEnder.GetComponent<GameOverTrigger>().GameOver();
-        // gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

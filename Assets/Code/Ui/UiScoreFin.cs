@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UiScore : MonoBehaviour
-
+public class UiScoreFin : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
 
@@ -17,7 +16,7 @@ public class UiScore : MonoBehaviour
     }
 
     public void UpdateText() {
-        _scoreText.text = $"Score: {GameManager.Score}";
+        _scoreText.text = $"Pisteet: {GameManager.Score}";
     }
 
     void FixedUpdate()

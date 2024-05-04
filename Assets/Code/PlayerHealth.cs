@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject _health2;
     [SerializeField] private GameObject _health3;
     [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private GameObject _gameOverTrigger;
 
     void Update()
     {
@@ -30,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
             _health2.SetActive(false);
             _health3.SetActive(false);
             _gameOverScreen.SetActive(true);
+            _gameOverTrigger.GetComponent<GameOverTrigger>().GameOver();
         }
     }
     public void TakeDamage(int damage)
