@@ -53,7 +53,13 @@ public class Health : MonoBehaviour
             Debug.Log("Player took " + _damage  + " damage");
             if(gameObject.CompareTag("Player"))
             {
-                _healtIdicator.GetComponent<PlayerHealth>().TakeDamage(_damage);
+                if(_healtIdicator.GetComponent<PlayerHealth>() != null)
+                {
+                    _healtIdicator.GetComponent<PlayerHealth>().TakeDamage(_damage);
+                } else if (_healtIdicator.GetComponent<PlayerHealthFin>() != null)
+                {
+                    _healtIdicator.GetComponent<PlayerHealthFin>().TakeDamage(_damage);
+                }
             }
             _isInvincible = true;
             Debug.Log("Player is invincible");
