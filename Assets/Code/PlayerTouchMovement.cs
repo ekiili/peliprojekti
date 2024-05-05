@@ -33,10 +33,10 @@ public class PlayerTouchMovement : MonoBehaviour
     }
     private void OnDisable()
     {
+        EnhancedTouchSupport.Disable();
         ETouch.Touch.onFingerDown -= FingerDown;
         ETouch.Touch.onFingerUp -= FingerUp;
         ETouch.Touch.onFingerMove -= FingerMove;
-        EnhancedTouchSupport.Disable();
     }
     private void FingerMove(Finger MovedFinger)
     {

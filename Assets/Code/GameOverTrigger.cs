@@ -20,8 +20,13 @@ public class GameOverTrigger : MonoBehaviour
     public void GameOver() {
         _gameOverPanel.SetActive(true);
         _joystick.gameObject.SetActive(false);
-        _gameOverScore.GetComponent<UiScore>().UpdateText();
-        _gameOverHighScore.GetComponent<Saves>().UpdateText();
+        try {
+            _gameOverScore.GetComponent<UiScore>().UpdateText();
+            _gameOverHighScore.GetComponent<Saves>().UpdateText();
+        } catch {
+            _gameOverScore.GetComponent<UiScoreFin>().UpdateText();
+            _gameOverHighScore.GetComponent<SavesFin>().UpdateText();
+        }
         Time.timeScale = 0;
         Debug.Log("Game Over");
     }

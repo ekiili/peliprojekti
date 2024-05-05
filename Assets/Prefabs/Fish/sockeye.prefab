@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3964026555821705974, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
+      propertyPath: _deadFish
+      value: 
+      objectReference: {fileID: 3545961300477363388, guid: 749614e76cfe80a469c58ba51aa43b2f, type: 3}
+    - target: {fileID: -3964026555821705974, guid: 1e52e34babacd0c42bce79d546ef08db, type: 3}
       propertyPath: _flipSprite
       value: 1
       objectReference: {fileID: 0}

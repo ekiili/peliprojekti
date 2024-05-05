@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class BoatSpawner : MonoBehaviour
@@ -30,6 +31,10 @@ public class BoatSpawner : MonoBehaviour
         Right
     }
 
+    void Awake() {
+        _liveBoat = false;
+    }
+
 
     float GetRandomTime()
     {
@@ -39,7 +44,6 @@ public class BoatSpawner : MonoBehaviour
     void SpawnBoat()
     {
         _liveBoat = true;
-        GetComponent<PlayClip>().PlayAudioClip();
 
         if (_activeSpawnPoint == SpawnPoint.Left)
         {
@@ -57,6 +61,12 @@ public class BoatSpawner : MonoBehaviour
             _currentDifficulty += _difficultyIncrease;
             _difficultyTimer = 0f;
         }
+
+        // try {
+        //     GetComponent<PlayClip>().PlayAudioClip();
+        // } catch (Exception e) {
+        //     e = null;
+        // }
 
     }
 
