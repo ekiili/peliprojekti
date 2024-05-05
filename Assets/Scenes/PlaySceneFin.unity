@@ -852,18 +852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diver
       objectReference: {fileID: 0}
-    - target: {fileID: 2331137079750349076, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: _joystick
+    - target: {fileID: 494207678396096587, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+      propertyPath: Joystick
       value: 
-      objectReference: {fileID: 4366969660365303217}
-    - target: {fileID: 2331137079750349076, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: _gameEnder
-      value: 
-      objectReference: {fileID: 1972369316}
-    - target: {fileID: 3749698278576031269, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: _healtIdicator
-      value: 
-      objectReference: {fileID: 848171063}
+      objectReference: {fileID: 3128721913273494402}
     - target: {fileID: 6893674032106859253, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -904,33 +896,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: Joystick
-      value: 
-      objectReference: {fileID: 3128721913273494402}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 1751200263}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: JoystickSize.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      propertyPath: JoystickSize.y
-      value: 1000
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8260520729513141801, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 334334947416081051, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751200263}
-    - targetCorrespondingSourceObject: {fileID: 334334947416081051, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751200273}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
 --- !u!1 &403467553
 GameObject:
@@ -9235,48 +9204,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 334334947416081051, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
   m_PrefabInstance: {fileID: 398615444}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1751200263
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751200253}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 594376207e71a2249917b9eeefdcb905, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!50 &1751200270 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 819806771962139710, guid: 75f6180de21b1db4a83c44f921e2dfc5, type: 3}
-  m_PrefabInstance: {fileID: 398615444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1751200273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751200253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5949837a060ad40810cb01aa371b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Joystick: {fileID: 3128721913273494402}
-  _rb: {fileID: 1751200270}
-  _speed: 2
-  _animator: {fileID: 1751200263}
 --- !u!1 &1760418622
 GameObject:
   m_ObjectHideFlags: 0
