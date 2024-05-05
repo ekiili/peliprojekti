@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameManager
+public static class GameManager 
 {
     public static event System.Action<int> ScoreChanged;
     private static int _score = 0;

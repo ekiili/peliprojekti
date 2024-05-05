@@ -13,17 +13,20 @@ public class MusicManController : MonoBehaviour
 
     public void SetSceneButtons() {
         ToggleButton _muteButton = GameObject.FindGameObjectWithTag("MusicMute").GetComponent<ToggleButton>();
-        if (_musicPlaying) {
-            _muteButton.ToggleOn();
-        } else {
-            _muteButton.ToggleOff();
-        }
 
-        _muteButton = GameObject.FindGameObjectWithTag("SfxMute").GetComponent<ToggleButton>();
-        if (_sfxPlaying) {
-            _muteButton.ToggleOn();
-        } else {
-            _muteButton.ToggleOff();
+        if (_muteButton != null) {
+            if (_musicPlaying) {
+                _muteButton.ToggleOn();
+            } else {
+                _muteButton.ToggleOff();
+            }
+
+            _muteButton = GameObject.FindGameObjectWithTag("SfxMute").GetComponent<ToggleButton>();
+            if (_sfxPlaying) {
+                _muteButton.ToggleOn();
+            } else {
+                _muteButton.ToggleOff();
+            }
         }
     }
 

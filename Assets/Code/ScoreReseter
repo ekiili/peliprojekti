@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+// quick fix for bug, score wont reset on retry from game over scene :]
+
+public class ScoreReseter : MonoBehaviour
+{
+    void Awake() {
+        
+    }
+}
