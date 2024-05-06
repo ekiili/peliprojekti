@@ -11,10 +11,14 @@ public class AudioSourceSfxMuter : MonoBehaviour
         _sauce = GetComponent<AudioSource>();
     }
     void FixedUpdate() {
+        DoTheStinky();
+    }
+
+    public void DoTheStinky() {
         if (_musicMan.GetComponent<MusicManController>()._sfxPlaying) {
-            _sauce.volume = 1;
+            _sauce.mute = false;
         } else {
-            _sauce.volume = 0;
+            _sauce.mute = true;
         }
     }
 }

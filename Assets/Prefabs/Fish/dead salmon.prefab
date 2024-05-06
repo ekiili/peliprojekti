@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashType: 2
-  _value: 1
+  _value: 0.5
   _col: 1
 --- !u!50 &7901321620977632468
 Rigidbody2D:

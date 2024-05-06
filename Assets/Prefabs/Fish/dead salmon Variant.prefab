@@ -13,6 +13,14 @@ PrefabInstance:
       value: dead salmon Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7414671873808629681, guid: a0032d5f6d21dfb48b2f6eb9e878655f, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414671873808629681, guid: a0032d5f6d21dfb48b2f6eb9e878655f, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414671873808629681, guid: a0032d5f6d21dfb48b2f6eb9e878655f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7cc77fe2566f0094f87fe8fe8731380e, type: 3}
