@@ -21,7 +21,7 @@ public class BoatSpawner : MonoBehaviour
     public static bool _liveBoat = false;
     private float _spawningTimer = 0f;
     private float _difficultyTimer = 0f;
-    private float _currentDifficulty = 0f;
+    public static float _currentDifficulty = 0f;
     [Tooltip("Used to set time for first spawn.")]
     [SerializeField] private float _timeBetweenSpawns = 5;
 
@@ -33,12 +33,13 @@ public class BoatSpawner : MonoBehaviour
 
     void Awake() {
         _liveBoat = false;
+        _currentDifficulty = 0f;
     }
 
 
     float GetRandomTime()
     {
-        return UnityEngine.Random.Range((int) _maxTimeBetweenSpawns - - _currentDifficulty, (int) _minTimeBetweenSpawns);
+        return UnityEngine.Random.Range((int) _maxTimeBetweenSpawns - _currentDifficulty, (int) _minTimeBetweenSpawns);
     }
 
     void SpawnBoat()
@@ -58,8 +59,9 @@ public class BoatSpawner : MonoBehaviour
         _timeBetweenSpawns = GetRandomTime();
 
         if (_difficultyTimer > _currentDifficulty) {
-            _currentDifficulty += _difficultyIncrease;
+            _currentDifficulty += _difficultyIncrease;;
             _difficultyTimer = 0f;
+            Debug.Log("Difficulty increased to: " + _currentDifficulty);
         }
 
         // try {
@@ -76,7 +78,7 @@ public class BoatSpawner : MonoBehaviour
         {
             _spawningTimer += Time.fixedDeltaTime;
             _difficultyTimer += Time.deltaTime;
-            
+
             if (_spawningTimer >= _timeBetweenSpawns)
             {
                 _activeSpawnPoint = (SpawnPoint) UnityEngine.Random.Range(0, 2);

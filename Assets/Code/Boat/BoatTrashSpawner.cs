@@ -5,8 +5,8 @@ using UnityEngine;
 public class BoatTrashSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject _trash;
-    [SerializeField] private float _SpawnRateMin = 2f;
-    [SerializeField] private float _SpawnRateMax = 5f;
+    [SerializeField] private float _SpawnRateMin = 0.5f;
+    [SerializeField] private float _SpawnRateMax = 4f;
 
     [Tooltip("Used to set time for first spawn.")]
     [SerializeField] private float _TimeToNextSpawn = 0f;
@@ -15,7 +15,11 @@ public class BoatTrashSpawner : MonoBehaviour
     private void SpawnTrash()
     {
         Instantiate(_trash, transform.position, Quaternion.identity);
-        _TimeToNextSpawn = Random.Range(_SpawnRateMin, _SpawnRateMax);
+        _TimeToNextSpawn = Random.Range(_SpawnRateMin, _SpawnRateMax - BoatSpawner._currentDifficulty / 5);
+        if (_TimeToNextSpawn < _SpawnRateMin)
+        {
+            _TimeToNextSpawn = _SpawnRateMin;
+        }
     }
 
     void FixedUpdate()

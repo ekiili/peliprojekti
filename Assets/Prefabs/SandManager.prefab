@@ -155,9 +155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashLevel: 0
   _sandHeight: 0
+  _sandOrigin: 0
   _normalSand: {fileID: 344319891802587826}
   _evilSand: {fileID: 3238091610967281170}
   _risingMultiplier: 0.05
+  _loweringAmount: 0.005
 --- !u!61 &4294057839093481988
 BoxCollider2D:
   m_ObjectHideFlags: 0
