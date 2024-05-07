@@ -10,8 +10,8 @@ public class BoatSpawner : MonoBehaviour
     [SerializeField] private Boat _boat;
     [SerializeField] private GameObject SpawnLeft;  // pois
     [SerializeField] private GameObject SpawnRight; // pois
-    [SerializeField] private float _minTimeBetweenSpawns = 5f;
-    [SerializeField] private float _maxTimeBetweenSpawns = 10f;
+    [SerializeField] private float _minTimeBetweenSpawns = 2.5f;
+    [SerializeField] private float _maxTimeBetweenSpawns = 5f;
     [Tooltip("Time between spawning frequency increases. \nDefault: 15sec")]
     [SerializeField] public float _timeBetweenDifficultyIncrease = 15f;
     [Tooltip("Time the time between spawns is decreased by every time the difficulty rises. \nDefault: 0.1sec")]

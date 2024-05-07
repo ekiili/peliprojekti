@@ -17,6 +17,7 @@ public class GameOverTriggerFin : MonoBehaviour
     }
 
     public void GameOver() {
+        Saves.SaveGame();
         _gameOverPanel.SetActive(true);
         _joystick.gameObject.SetActive(false);
         _gameOverScore.GetComponent<UiScoreFin>().UpdateText();

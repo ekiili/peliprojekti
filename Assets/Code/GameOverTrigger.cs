@@ -18,6 +18,7 @@ public class GameOverTrigger : MonoBehaviour
     }
 
     public void GameOver() {
+        Saves.SaveGame();
         _gameOverPanel.SetActive(true);
         _joystick.gameObject.SetActive(false);
         try {
